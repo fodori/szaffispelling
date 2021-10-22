@@ -768,7 +768,7 @@
         speaker.text = text;
 
         speaker.voice = voices.filter(function (voice) {
-          return voice.name == "Daniel";
+          return voice.name == "Daniel" || voice.name == "English United Kingdom";
         })[0];
         speechSynthesis.speak(speaker);
       }
