@@ -1,8 +1,7 @@
 <html>
   <head>
-    <title>Szaffi spelling app1</title>
+    <title>Szaffi spelling app</title>
     <script>
-      var speaker = new SpeechSynthesisUtterance();
       var myStorage = window.localStorage;
       var wordsArray = JSON.parse(myStorage.getItem("wordsArray"));
       if (wordsArray === null || wordsArray === undefined) {
@@ -757,7 +756,6 @@
 
       function loadVoices() {
         voices = speechSynthesis.getVoices();
-        console.log(voices);
       }
 
       // Chrome loads voices asynchronously.
@@ -765,12 +763,18 @@
         loadVoices();
       };
       function speakWord(text) {
+        var speaker = new SpeechSynthesisUtterance();
+        speaker.volume = parseFloat(1); //0--1
+        speaker.rate = parseFloat(0.8); //0.1--10
+        speaker.pitch = parseFloat(1.4); // 0--2
+        speaker.lang = "en";
         speaker.text = text;
 
-        speaker.voice = voices.filter(function (voice) {
-          return voice.name == "Daniel" || voice.name == "English United Kingdom";
-        })[0];
-        alert(speaker.voice);
+        speaker.voice = voices[0];
+        // voices.filter(function (voice) {
+        //   return voice.name == "Daniel" || voice.name == "English United Kingdom";
+        // })[0];
+        // alert(speaker.voice);
         speechSynthesis.speak(speaker);
       }
       function getTextFieldValue() {
@@ -834,15 +838,11 @@
         var helper = document.getElementById("helper");
 
         var voices = [];
-        speaker.volume = parseFloat(1); //0--1
-        speaker.rate = parseFloat(0.8); //0.1--10
-        speaker.pitch = parseFloat(1); // 0--2
-        speaker.lang = "en";
       }
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book1</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
