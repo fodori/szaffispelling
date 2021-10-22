@@ -760,7 +760,7 @@
       }
 
       // Chrome loads voices asynchronously.
-      window.speechSynthesis.onvoiceschanged = function (e) {
+      speechSynthesis.onvoiceschanged = function (e) {
         loadVoices();
         alert("loadVoices0");
       };
