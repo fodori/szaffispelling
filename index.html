@@ -757,38 +757,29 @@
 
       function loadVoices() {
         voices = speechSynthesis.getVoices();
-        alert("loadVoices1", voices.length);
       }
 
       // Chrome loads voices asynchronously.
       speechSynthesis.onvoiceschanged = function (e) {
         loadVoices();
-        alert("loadVoices0");
       };
       function speakWord(text) {
-        alert("speakWord0");
         if (voices === null) {
           loadVoices();
         }
         var speaker = new SpeechSynthesisUtterance();
-        alert("speakWord1");
         speaker.volume = parseFloat(1); //0--1
         speaker.rate = parseFloat(0.8); //0.1--10
         speaker.pitch = parseFloat(1.4); // 0--2
-        alert("speakWord2");
         speaker.lang = "en";
-        alert("speakWord3");
         speaker.text = text;
-        alert("speakWord4");
 
         speaker.voice = voices[0];
-        alert("speakWord5");
         // voices.filter(function (voice) {
         //   return voice.name == "Daniel" || voice.name == "English United Kingdom";
         // })[0];
         // alert(speaker.voice);
         speechSynthesis.speak(speaker);
-        alert("speakWord6");
       }
       function getTextFieldValue() {
         speakWord(document.getElementById("attemptword").value);
