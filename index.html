@@ -767,6 +767,9 @@
       };
       function speakWord(text) {
         alert("speakWord0");
+        if (voices === null) {
+          loadVoices();
+        }
         var speaker = new SpeechSynthesisUtterance();
         alert("speakWord1");
         speaker.volume = parseFloat(1); //0--1
@@ -846,11 +849,14 @@
         var spansentence = document.getElementById("spansentence");
         var spanscore = document.getElementById("spanscore");
         var helper = document.getElementById("helper");
+        if (voices === null) {
+          loadVoices();
+        }
       }
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book2</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book3</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
