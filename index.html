@@ -363,7 +363,7 @@
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.9</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.10</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
@@ -377,7 +377,7 @@
       <option value="4">Year 3-4</option>
     </select> -->
     <p style="text-align: center">
-      <button onClick="getRandomIndex();speakWord(getSentence() );" style="width: 200px; height: 100px; font-size: 30px">
+      <button onClick="getRandomIndex();speakWord(getSentence() ); speakWord(getWorld() );" style="width: 200px; height: 100px; font-size: 30px">
         Next <span style="font-size: 30px; line-height: 15px">➤</span>
       </button>
       <button onClick="speakWord(getWorld() );" style="width: 200px; height: 100px; font-size: 30px">
