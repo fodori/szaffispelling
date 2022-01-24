@@ -356,10 +356,8 @@
         checkBtn.disabled = true;
         if (`${attemptword}`.toLocaleLowerCase() === `${getWorld()}`.toLocaleLowerCase()) {
           correct(); 
-          next();
         } else {
           wrong(); 
-          next();
         }
       }
 
@@ -394,7 +392,7 @@
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.12</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.13</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
