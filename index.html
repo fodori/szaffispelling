@@ -4,8 +4,8 @@
     <script>
       var myStorage = window.localStorage;
       var wordsArray = JSON.parse(myStorage.getItem("wordsArray"));
-      if (wordsArray === null || wordsArray === undefined) {
-        var words = [
+
+      var origWords = [
           // { word: "about", sentence: "I love thinking about the future.", score: 0, year: 2 },
           // { word: "after", sentence: "He has come after me.", score: 0, year: 2 },
           // { word: "again", sentence: "She fell asleep again when he left the room.", score: 0, year: 2 },
@@ -216,7 +216,7 @@
           { word: "jolly", sentence: "He was a jolly man full of jokes.", score: 0, year: 4 },
           { word: "jolliest", sentence: "She is the jolliest in the class.", score: 0, year: 4 },
           { word: "happier", sentence: "She is happeir than yesterday", score: 0, year: 4 },
-          { word: "beautiful", sentence: "Krisztina was soo beautiful", score: 0, year: 4 },
+          { word: "beautiful", sentence: "Szaffi was soo beautiful", score: 0, year: 4 },
           { word: "everybody", sentence: "Everybody listen", score: 0, year: 4 },
           { word: "speaker", sentence: "This speaker is loud", score: 0, year: 4 },
           { word: "improve", sentence: "You need to improve your spellings", score: 0, year: 4 },
@@ -238,15 +238,16 @@
           { word: "cheque", sentence: "No one else can use the gift cheque.", score: 0, year: 4 },
         ];
 
-        myStorage.setItem("wordsArray", JSON.stringify(words));
-        wordsArray = words;
+      if (wordsArray === null || wordsArray === undefined) {
+        myStorage.setItem("wordsArray", JSON.stringify(origWords));
+        wordsArray = origWords;
       }
       var index = 0;
       var voices = null;
+      var finished=[];
 
       function loadVoices() {
         voices = speechSynthesis.getVoices();
-        console.log(voices);
         voices.forEach(function (voice, i) {
           // Create a new option element.
           var option = document.createElement("option");
@@ -269,31 +270,38 @@
         if (voices === null) {
           loadVoices();
         }
-        var speaker = new SpeechSynthesisUtterance();
-        speaker.volume = parseFloat(1); //0--1
-        speaker.rate = parseFloat(0.8); //0.1--10
-        speaker.pitch = parseFloat(1.4); // 0--2
-        speaker.lang = "en";
-        speaker.text = text;
+        if (text){
+          var speaker = new SpeechSynthesisUtterance();
+          speaker.volume = parseFloat(1); //0--1
+          speaker.rate = parseFloat(0.8); //0.1--10
+          speaker.pitch = parseFloat(1.4); // 0--2
+          speaker.lang = "en";
+          speaker.text = text;
 
-        //speaker.voice = voices[0];
-        speaker.voice = speechSynthesis.getVoices().filter(function (voice) {
-          return voice.name == voiceSelect.value;
-        })[0];
-        // voices.filter(function (voice) {
-        //   return voice.name == "Daniel" || voice.name == "English United Kingdom";
-        // })[0];
-        // alert(speaker.voice);
-        speechSynthesis.speak(speaker);
+          //speaker.voice = voices[0];
+          speaker.voice = speechSynthesis.getVoices().filter(function (voice) {
+            return voice.name == voiceSelect.value;
+          })[0];
+          // voices.filter(function (voice) {
+          //   return voice.name == "Daniel" || voice.name == "English United Kingdom";
+          // })[0];
+          // alert(speaker.voice);
+          speechSynthesis.speak(speaker);
+        }
       }
       function getTextFieldValue() {
         speakWord(document.getElementById("attemptword").value);
       }
-      function getRandomWord() {
-        index = Math.floor(Math.random() * wordsArray.length);
-        return wordsArray[index].word;
-      }
+      
       function getRandomIndex() {
+        console.log(JSON.stringify(wordsArray))
+        if (wordsArray.length===0){
+          speakWord("No word left to learn today. Szaffi you are really good.");
+          document.getElementById("controlpanel0").remove();
+          document.getElementById("controlpanel1").remove();
+          document.getElementById("controlpanel2").remove();
+          return null;
+        } 
         index = Math.floor(Math.random() * wordsArray.length);
         document.getElementById("attemptword").value = "";
         document.getElementById("attemptword").focus();
@@ -305,26 +313,38 @@
         // spanindex.textContent = index;
         // console.log(wordsArray[index]);
         helper.style.display = "none";
-        spanword.textContent = wordsArray[index].word;
-        spansentence.textContent = wordsArray[index].sentence;
-        spanscore.textContent = wordsArray[index].score;
+        if (wordsArray[index] && wordsArray[index].word){
+          spanword.textContent = wordsArray[index].word;
+          spansentence.textContent = wordsArray[index].sentence;
+          spanscore.textContent = wordsArray[index].score;
+        }
         myStorage.setItem("wordsArray", JSON.stringify(wordsArray));
+
       }
       function getSentence() {
-        return wordsArray[index].sentence;
+        return wordsArray[index] && wordsArray[index].sentence;
       }
       function getWorld() {
-        return wordsArray[index].word;
+        return wordsArray[index] && wordsArray[index].word;
       }
+
+      function removeItem  (items, i) {
+        return items.filter((item,index )=> index!==i)
+      }
+
       function correct() {
         wordsArray[index].score++;
         speakWord("correct");
-        refreshData();
+        if (wordsArray[index].score>1){
+          wordsArray=removeItem( wordsArray,index);
+        console.log(JSON.stringify(wordsArray))
+          speakWord("Congratulation, you learnt this word");
+        }
       }
+
       function wrong() {
         wordsArray[index].score--;
         speakWord("wrong");
-        refreshData();
         helper.style.display = "block";
       }
       function checkWord() {
@@ -333,10 +353,13 @@
           speakWord("type something into input field");
           return null;
         }
+        checkBtn.disabled = true;
         if (`${attemptword}`.toLocaleLowerCase() === `${getWorld()}`.toLocaleLowerCase()) {
-          correct();
+          correct(); 
+          next();
         } else {
-          wrong();
+          wrong(); 
+          next();
         }
       }
 
@@ -347,7 +370,14 @@
         //console.log(value);
 
         myStorage.setItem("voiceSelect", value);
-        wordsArray = words;
+        myStorage.setItem("wordsArray", JSON.stringify(origWords));
+        wordsArray = origWords;
+      }
+      function next(){
+        checkBtn.disabled = false;
+        getRandomIndex();
+        speakWord(getSentence() ); 
+        speakWord(getWorld() );
       }
       function init() {
         var spanword = document.getElementById("spanword");
@@ -355,6 +385,7 @@
         var spanscore = document.getElementById("spanscore");
         var helper = document.getElementById("helper");
         voiceSelect = document.getElementById("voice");
+        var checkBtn = document.getElementById("checkBtn");
 
         if (voices === null) {
           loadVoices();
@@ -363,7 +394,7 @@
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.11</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.12</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
@@ -376,8 +407,8 @@
       <option value="2">Year 1-2</option>
       <option value="4">Year 3-4</option>
     </select> -->
-    <p style="text-align: center">
-      <button onClick="getRandomIndex();speakWord(getSentence() ); speakWord(getWorld() );" style="width: 200px; height: 100px; font-size: 30px">
+    <p style="text-align: center" id="controlpanel0">
+      <button onClick="next();" style="width: 200px; height: 100px; font-size: 30px">
         Next <span style="font-size: 30px; line-height: 15px">➤</span>
       </button>
       <button onClick="speakWord(getWorld() );" style="width: 200px; height: 100px; font-size: 30px">
@@ -387,9 +418,9 @@
         Sentence <span style="font-size: 60px; line-height: 20px">˽</span>
       </button>
     </p>
-    <h1 style="text-align: center; width: 100%">Word Difficulty: <span id="spanscore"></span></h1>
-    <div style="margin: 30px; text-align: center">
-      <button onClick="checkWord();" style="width: 400px; height: 100px; font-size: 30px">Check the word</button>
+    <h1 style="text-align: center; width: 100%" id="controlpanel1">Word Difficulty: <span id="spanscore"></span></h1>
+    <div style="margin: 30px; text-align: center" id="controlpanel2">
+      <button onClick="checkWord();" style="width: 400px; height: 100px; font-size: 30px" id="checkBtn">Check the word</button>
       <input type="text" id="attemptword" name="world" autofocus style="width: 100%; font-size: 60px" />
     </div>
   </body>
