@@ -357,6 +357,7 @@
         checkBtn.disabled = true;
         if (`${attemptword}`.toLocaleLowerCase() === `${getWorld()}`.toLocaleLowerCase()) {
           correct(); 
+          next();
         } else {
           wrong(); 
         }
