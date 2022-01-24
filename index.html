@@ -220,7 +220,7 @@
           { word: "everybody", sentence: "Everybody listen", score: 0, year: 4 },
           { word: "speaker", sentence: "This speaker is loud", score: 0, year: 4 },
           { word: "improve", sentence: "You need to improve your spellings", score: 0, year: 4 },
-          { word: "should", sentence: "You sould dress nicely in a restaurant", score: 0, year: 4 },
+          { word: "should", sentence: "You should dress nicely in a restaurant", score: 0, year: 4 },
           { word: "says", sentence: "He says is a good idea", score: 0, year: 4 },
           { word: "your", sentence: "Is this pen is your one", score: 0, year: 4 },
           { word: "horrible", sentence: "This colour is horrible", score: 0, year: 4 },
@@ -334,6 +334,7 @@
 
       function correct() {
         wordsArray[index].score++;
+        refreshData();
         speakWord("correct");
         if (wordsArray[index].score>1){
           wordsArray=removeItem( wordsArray,index);
@@ -392,7 +393,7 @@
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.13</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.14</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
