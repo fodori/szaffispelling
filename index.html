@@ -391,6 +391,7 @@
       }
 
       var voiceSelect;
+      var lessonSelect;
 
       function onChangeVoice(selectObject) {
         var value = selectObject.value;
@@ -398,7 +399,25 @@
 
         myStorage.setItem("voiceSelect", value);
         myStorage.setItem("wordsArray", JSON.stringify(origWords));
-        wordsArray = origWords;
+        if (voiceSelect.value) {
+          wordsArray = origWords.filter(i=> i.lesson ===voiceSelect.value );
+        } else {
+          wordsArray = origWords;
+        }
+        document.getElementById("lessonLength").innerHTML=wordsArray.length
+      }
+      function onChangeLesson(selectObject) {
+        var value = selectObject.value;
+        //console.log(value);
+        myStorage.setItem("wordsArray", JSON.stringify(origWords));
+        if (lessonSelect.value) {
+          wordsArray = origWords.filter(i=> i.lesson ===lessonSelect.value );
+        } else {
+          wordsArray = origWords;
+        }
+        console.log('aaaa',wordsArray,lessonSelect.value)
+        document.getElementById("lessonLength").innerHTML=wordsArray.length
+        
       }
       function next(){
         checkBtn.disabled = false;
@@ -443,9 +462,10 @@
     <select name="voice" id="voice" onchange="onChangeVoice(this)">
       <option value="">-- select a voice --</option>
     </select>
-    <select name="lesson" id="lesson">
+    <select name="lesson" id="lesson" onchange="onChangeLesson(this)">
       <option value="">-- select a lesson --</option>
     </select>
+    Words left to learn in this lession : <span id="lessonLength"></span>
     <p style="text-align: center" id="controlpanel0">
       <button onClick="next();" style="width: 200px; height: 100px; font-size: 30px">
         Next <span style="font-size: 30px; line-height: 15px">➤</span>
