@@ -383,7 +383,7 @@
       }
       
       function getRandomIndex() {
-        console.log(JSON.stringify(wordsArray))
+        //console.log(JSON.stringify(wordsArray))
         if (wordsArray.length===0){
           speakWord("No word left to learn today. Szaffi you are really good.");
           document.getElementById("controlpanel0").remove();
@@ -427,7 +427,7 @@
         speakWord("correct");
         if (wordsArray[index].score>1){
           wordsArray=removeItem( wordsArray,index);
-        console.log(JSON.stringify(wordsArray))
+        //console.log(JSON.stringify(wordsArray))
           speakWord("Congratulation, you learnt this word");
         }
       }
@@ -474,6 +474,7 @@
         myStorage.setItem("wordsArray", JSON.stringify(origWords));
         if (lessonSelect.value) {
           wordsArray = origWords.filter(i=> i.lesson ===lessonSelect.value );
+          myStorage.setItem("lessionSelect", value);
         } else {
           wordsArray = origWords;
         }
@@ -494,7 +495,6 @@
         voiceSelect = document.getElementById("voice");
         lessonSelect = document.getElementById("lesson");
         var checkBtn = document.getElementById("checkBtn");
-
         if (voices === null) {
           loadVoices();
         }
@@ -510,11 +510,13 @@
             // Add the option to the voice selector.
             lessonSelect.appendChild(option);
         });
+        lessonSelect.value = myStorage.getItem("lessionSelect");
+        onChangeLesson(lessonSelect)
       }
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.19</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.20</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
