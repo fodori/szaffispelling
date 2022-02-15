@@ -3,6 +3,8 @@
     <title>Szaffi spelling app</title>
     <script>
       var myStorage = window.localStorage;
+      var exam=[]
+
       var wordsArray = JSON.parse(myStorage.getItem("wordsArray"));
 
       var origWords = [
@@ -385,10 +387,21 @@
       function getRandomIndex() {
         //console.log(JSON.stringify(wordsArray))
         if (wordsArray.length===0){
-          speakWord("No word left to learn today. Szaffi you are really good.");
+          const isExam=document.getElementById("isExam").checked
           document.getElementById("controlpanel0").remove();
           document.getElementById("controlpanel1").remove();
           document.getElementById("controlpanel2").remove();
+          if (isExam){
+            if  (exam.length>0){
+              document.getElementById("lessonLength").innerHTML=` These words was wrong: ${exam.join(", ")}`
+              speakWord("Don't worry, let's try again later");
+            } else {
+              document.getElementById("lessonLength").innerHTML=`Hurray Excellent, good job`
+              speakWord("Hurray Excellent, good job");
+            }
+          } else {
+            speakWord("No word left to learn today. Szaffi you are really good.");
+          }
           return null;
         } 
         index = Math.floor(Math.random() * wordsArray.length);
@@ -425,9 +438,11 @@
         wordsArray[index].score++;
         refreshData();
         speakWord("correct");
-        if (wordsArray[index].score>1){
+        const isExam=document.getElementById("isExam").checked
+        if (wordsArray[index].score>isExam?0:1){
           wordsArray=removeItem( wordsArray,index);
         //console.log(JSON.stringify(wordsArray))
+        if (!isExam)
           speakWord("Congratulation, you learnt this word");
         }
       }
@@ -436,6 +451,10 @@
         wordsArray[index].score--;
         speakWord("wrong");
         helper.style.display = "block";
+        const isExam=document.getElementById("isExam").checked
+        if (isExam){
+          wordsArray=removeItem( wordsArray,index);
+        }
       }
       function checkWord() {
         var attemptword = document.getElementById("attemptword").value;
@@ -444,12 +463,18 @@
           return null;
         }
         checkBtn.disabled = true;
+        const isExam=document.getElementById("isExam").checked
         if (`${attemptword.trim()}`.toLocaleLowerCase() === `${getWorld()}`.toLocaleLowerCase()) {
           correct(); 
           next();
         } else {
+          if (isExam) {
+            exam.push(getWorld())
+          }
           wrong(); 
         }
+
+        document.getElementById("lessonLength").innerHTML=wordsArray.length
       }
 
       var voiceSelect;
@@ -516,7 +541,7 @@
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.20</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.21</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
@@ -527,8 +552,9 @@
     </select>
     <select name="lesson" id="lesson" onchange="onChangeLesson(this)">
       <option value="">-- select a lesson --</option>
-    </select>
-    Words left to learn in this lession : <span id="lessonLength"></span>
+    </select><input type="checkbox" id="isExam" name="isExam" value="Exam" onchange="init()">
+    <label for="isExam">Exam</label>
+    <p>Words left to learn in this lession : <span id="lessonLength"></span></p>
     <p style="text-align: center" id="controlpanel0">
       <button onClick="next();" style="width: 200px; height: 100px; font-size: 30px">
         Next <span style="font-size: 30px; line-height: 15px">➤</span>
