@@ -607,17 +607,17 @@
       }
     </script>
   </head>
-  <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.22</h1>
+  <body style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 23px;" onload="init()">
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.23</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
       <h1 style="text-align: center; width: 100%">Sentence: <span id="spansentence"></span></h1>
     </div>
-    <select name="voice" id="voice" onchange="onChangeVoice(this)">
+    <select name="voice" id="voice" onchange="onChangeVoice(this)" style="font-size: 23px;">
       <option value="">-- select a voice --</option>
     </select>
-    <select name="lesson" id="lesson" onchange="onChangeLesson(this)">
+    <select name="lesson" id="lesson" onchange="onChangeLesson(this)" style="font-size: 23px;">
       <option value="">-- select a lesson --</option>
     </select><input type="checkbox" id="isExam" name="isExam" value="Exam" onchange="init()">
     <label for="isExam">Exam</label>
