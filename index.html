@@ -324,6 +324,61 @@
           { word: "illusion", sentence: "This will give the illusion of larger lips.", score: 0, lesson: "4 autumn 2 week 2" },
           { word: "illusive", sentence: "The conscious life of all men is apparitional and illusive.", score: 0, lesson: "4 autumn 2 week 2" },
           { word: "illustration", sentence: "A good illustration of it is peat.", score: 0, lesson: "4 autumn 2 week 2" },
+          { word: "information", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "adoration", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "sensation", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "preparation", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "admiration", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "foundation", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "qualification", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "experimentation", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "exploration", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "examination", sentence: "", score: 0, lesson: "4 autumn 2 week 3" },
+          { word: "notice", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "ordinary", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "certain", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "suppose", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "breathe", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "increase", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "recent", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "quarter", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "group", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "island", sentence: "", score: 0, lesson: "4 autumn 2 week 4" },
+          { word: "forgetting", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "forgotten", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "gardening", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "gardener", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "limiting", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "beginning", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "beginner", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "limitation", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "preferred", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "limitations", sentence: "", score: 0, lesson: "4 autumn 2 week 5" },
+          { word: "illegal", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "ordinary", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "breathe", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "preparation", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "admiration", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "illiterate", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "illicit", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "illustration", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "disappoint", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "disappear", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "adoration", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "sensation", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "disinfect", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "notice", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "group", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "island", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "limitation", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "disagree", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "illegible", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "illuminate", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "illogical", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "foundation", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "qualification", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "beginning", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
+          { word: "beginner", sentence: "", score: 0, lesson: "4 autumn 2 week 6" },
         ];
         // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Autumn1_Week5_Dictation/Year%204%20Autumn%201%20Week%204%20Dictations.pdf
         // https://sentence.yourdictionary.com/illegal
@@ -331,9 +386,10 @@
         myStorage.setItem("wordsArray", JSON.stringify(origWords));
         wordsArray = origWords;
       }
-      var index = 0;
+      var selectedWordIndex = 0;
       var voices = null;
       var finished=[];
+      var demoMode=false;
 
       function loadVoices() {
         voices = speechSynthesis.getVoices();
@@ -404,30 +460,39 @@
           }
           return null;
         } 
-        index = Math.floor(Math.random() * wordsArray.length);
+        selectedWordIndex = Math.floor(Math.random() * wordsArray.length);
+        document.getElementById("selectedIndexSpan").innerHTML = selectedWordIndex ;
         document.getElementById("attemptword").value = "";
         document.getElementById("attemptword").focus();
-        helper.style.display = "none";
+        if (demoMode) {
+          helper.style.display = "block";
+        } else {
+          helper.style.display = "none";
+        }
         refreshData();
       }
       function refreshData() {
         // var spanindex = document.getElementById("spanindex");
         // spanindex.textContent = index;
         // console.log(wordsArray[index]);
-        helper.style.display = "none";
-        if (wordsArray[index] && wordsArray[index].word){
-          spanword.textContent = wordsArray[index].word;
-          spansentence.textContent = wordsArray[index].sentence;
-          spanscore.textContent = wordsArray[index].score;
+        if (demoMode) {
+          helper.style.display = "block";
+        } else {
+          helper.style.display = "none";
+        }
+        if (wordsArray[selectedWordIndex] && wordsArray[selectedWordIndex].word){
+          spanword.textContent = wordsArray[selectedWordIndex].word;
+          spansentence.textContent = wordsArray[selectedWordIndex].sentence;
+          spanscore.textContent = wordsArray[selectedWordIndex].score;
         }
         myStorage.setItem("wordsArray", JSON.stringify(wordsArray));
 
       }
       function getSentence() {
-        return wordsArray[index] && wordsArray[index].sentence;
+        return wordsArray[selectedWordIndex] && wordsArray[selectedWordIndex].sentence;
       }
       function getWorld() {
-        return wordsArray[index] && wordsArray[index].word;
+        return wordsArray[selectedWordIndex] && wordsArray[selectedWordIndex].word;
       }
 
       function removeItem  (items, i) {
@@ -435,27 +500,29 @@
       }
 
       function correct() {
-        wordsArray[index].score++;
-        refreshData();
-        speakWord("correct");
+        wordsArray[selectedWordIndex].score++;
         const isExam=document.getElementById("isExam").checked
-        if (wordsArray[index].score>isExam?0:1){
-          wordsArray=removeItem( wordsArray,index);
+       
+        if (wordsArray[selectedWordIndex].score>isExam?0:1){
+          wordsArray=removeItem( wordsArray,selectedWordIndex);
         //console.log(JSON.stringify(wordsArray))
+        speakWord("correct");
         if (!isExam)
           speakWord("Congratulation, you learnt this word");
         }
+        refreshData();
       }
 
       function wrong() {
-        wordsArray[index].score--;
-        speakWord("wrong");
+        wordsArray[selectedWordIndex].score--;
         helper.style.display = "block";
         const isExam=document.getElementById("isExam").checked
         if (isExam){
-          wordsArray=removeItem( wordsArray,index);
+          wordsArray=removeItem( wordsArray,selectedWordIndex);
         }
+        speakWord("wrong");
       }
+
       function checkWord() {
         var attemptword = document.getElementById("attemptword").value;
         if (!attemptword || attemptword.length === 0) {
@@ -541,7 +608,7 @@
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.21</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.22</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
@@ -555,6 +622,7 @@
     </select><input type="checkbox" id="isExam" name="isExam" value="Exam" onchange="init()">
     <label for="isExam">Exam</label>
     <p>Words left to learn in this lession : <span id="lessonLength"></span></p>
+    <p><span id="selectedIndexSpan"></span></p>
     <p style="text-align: center" id="controlpanel0">
       <button onClick="next();" style="width: 200px; height: 100px; font-size: 30px">
         Next <span style="font-size: 30px; line-height: 15px">➤</span>
