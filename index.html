@@ -5,7 +5,6 @@
       var myStorage = window.localStorage;
       var exam=[]
 
-      var wordsArray = JSON.parse(myStorage.getItem("wordsArray"));
 
       var origWords = [
           { word: "about", sentence: "I love thinking about the future.", score: 0, lesson: "2 I" },
@@ -357,10 +356,8 @@
         ];
         // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Autumn1_Week5_Dictation/Year%204%20Autumn%201%20Week%204%20Dictations.pdf
         // https://sentence.yourdictionary.com/illegal
-      if (wordsArray === null || wordsArray === undefined) {
-        myStorage.setItem("wordsArray", JSON.stringify(origWords));
-        wordsArray = origWords;
-      }
+      
+      wordsArray = origWords;
       var selectedWordIndex = 0;
       var voices = null;
       var finished=[];
@@ -416,7 +413,6 @@
       }
       
       function getRandomIndex() {
-        //console.log(JSON.stringify(wordsArray))
         if (wordsArray.length===0){
           const isExam=document.getElementById("isExam").checked
           document.getElementById("controlpanel0").remove();
@@ -447,9 +443,7 @@
         refreshData();
       }
       function refreshData() {
-        // var spanindex = document.getElementById("spanindex");
-        // spanindex.textContent = index;
-        // console.log(wordsArray[index]);
+        const isExam=document.getElementById("isExam").checked
         if (demoMode) {
           helper.style.display = "block";
         } else {
@@ -458,9 +452,8 @@
         if (wordsArray[selectedWordIndex] && wordsArray[selectedWordIndex].word){
           spanword.textContent = wordsArray[selectedWordIndex].word;
           spansentence.textContent = wordsArray[selectedWordIndex].sentence;
-          spanscore.textContent = wordsArray[selectedWordIndex].score;
+          spanscore.textContent = isExam?1:2-wordsArray[selectedWordIndex].score;
         }
-        myStorage.setItem("wordsArray", JSON.stringify(wordsArray));
 
       }
       function getSentence() {
@@ -470,30 +463,12 @@
         return wordsArray[selectedWordIndex] && wordsArray[selectedWordIndex].word;
       }
 
-      function removeItem  (items, i) {
-        return items.filter((item,index )=> index!==i)
-      }
-
-      function correct() {
-        wordsArray[selectedWordIndex].score++;
-        const isExam=document.getElementById("isExam").checked
-       
-        if (wordsArray[selectedWordIndex].score>isExam?0:1){
-          wordsArray=removeItem( wordsArray,selectedWordIndex);
-        //console.log(JSON.stringify(wordsArray))
-        speakWord("correct");
-        if (!isExam)
-          speakWord("Congratulation, you learnt this word");
-        }
-        refreshData();
-      }
-
       function wrong() {
         wordsArray[selectedWordIndex].score--;
         helper.style.display = "block";
         const isExam=document.getElementById("isExam").checked
         if (isExam){
-          wordsArray=removeItem( wordsArray,selectedWordIndex);
+          wordsArray.splice(selectedWordIndex, 1);
         }
         speakWord("wrong");
       }
@@ -507,16 +482,25 @@
         checkBtn.disabled = true;
         const isExam=document.getElementById("isExam").checked
         if (`${attemptword.trim()}`.toLocaleLowerCase() === `${getWorld()}`.toLocaleLowerCase()) {
-          correct(); 
+          
+          wordsArray[selectedWordIndex].score++;
+          speakWord("correct");
+          if (isExam?wordsArray[selectedWordIndex].score>0:wordsArray[selectedWordIndex].score>1){
+            wordsArray.splice(selectedWordIndex, 1);
+            if (!isExam) {
+              speakWord("Congratulation, you learnt this word");
+            }
+          }
+          refreshData();
           next();
         } else {
           if (isExam) {
             exam.push(getWorld())
           }
           wrong(); 
+          document.getElementById("lessonLength").innerHTML=wordsArray.length
         }
 
-        document.getElementById("lessonLength").innerHTML=wordsArray.length
       }
 
       var voiceSelect;
@@ -524,10 +508,8 @@
 
       function onChangeVoice(selectObject) {
         var value = selectObject.value;
-        //console.log(value);
 
         myStorage.setItem("voiceSelect", value);
-        myStorage.setItem("wordsArray", JSON.stringify(origWords));
         if (voiceSelect.value) {
           wordsArray = origWords.filter(i=> i.lesson ===voiceSelect.value );
         } else {
@@ -537,8 +519,6 @@
       }
       function onChangeLesson(selectObject) {
         var value = selectObject.value;
-        //console.log(value);
-        myStorage.setItem("wordsArray", JSON.stringify(origWords));
         if (lessonSelect.value) {
           wordsArray = origWords.filter(i=> i.lesson ===lessonSelect.value );
           myStorage.setItem("lessionSelect", value);
@@ -550,6 +530,7 @@
       }
       function next(){
         checkBtn.disabled = false;
+        document.getElementById("controlpanel1").style.display = "inline";
         getRandomIndex();
         speakWord(getSentence() ); 
         speakWord(getWorld() );
@@ -583,7 +564,7 @@
     </script>
   </head>
   <body style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 23px;" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.24</h1>
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.25</h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
       <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
@@ -595,9 +576,8 @@
     <select name="lesson" id="lesson" onchange="onChangeLesson(this)" style="font-size: 23px;">
       <option value="">-- select a lesson --</option>
     </select><input type="checkbox" id="isExam" name="isExam" value="Exam" onchange="init()">
-    <label for="isExam">Exam</label>
+    <label for="isExam">Exam</label> <span id="controlpanel1" style="display:none;">(<span id="spanscore"></span> left to finish the <span id="selectedIndexSpan"></span>. word.)</span>
     <p>Words left to learn in this lession : <span id="lessonLength"></span></p>
-    <p><span id="selectedIndexSpan"></span></p>
     <p style="text-align: center" id="controlpanel0">
       <button onClick="next();" style="width: 200px; height: 100px; font-size: 30px">
         Next <span style="font-size: 30px; line-height: 15px">➤</span>
@@ -609,9 +589,8 @@
         Sentence <span style="font-size: 60px; line-height: 20px">˽</span>
       </button>
     </p>
-    <h1 style="text-align: center; width: 100%" id="controlpanel1">Word Difficulty: <span id="spanscore"></span></h1>
     <div style="margin: 30px; text-align: center" id="controlpanel2">
-      <button onClick="checkWord();" style="width: 400px; height: 100px; font-size: 30px" id="checkBtn">Check the word</button>
+      <button onClick="checkWord();" style="width: 400px; height: 100px; font-size: 30px" id="checkBtn" disabled>Check the word</button>
       <input type="text" id="attemptword" name="world" autofocus style="width: 100%; font-size: 60px" />
     </div>
   </body>
