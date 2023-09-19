@@ -3,640 +3,3642 @@
     <title>Szaffi spelling app</title>
     <script>
       var myStorage = window.localStorage;
-      var exam=[]
-
+      var exam = [];
 
       var origWords = [
-          { word: "about", sentence: "I love thinking about the future.", score: 0, lesson: "2 I" },
-          { word: "after", sentence: "He has come after me.", score: 0, lesson: "2 I" },
-          { word: "again", sentence: "She fell asleep again when he left the room.", score: 0, lesson: "2 I" },
-          { word: "also", sentence: "He was also dressed for the exclusive party.", score: 0, lesson: "2 I" },
-          { word: "away", sentence: "Take that stuff away!", score: 0, lesson: "2 I" },
-          { word: "back", sentence: "I'm going back home.", score: 0, lesson: "2 I" },
-          { word: "because", sentence: "Because you are sorry for him!", score: 0, lesson: "2 I" },
-          { word: "before", sentence: "Night came on before he had finished it.", score: 0, lesson: "2 I" },
-          { word: "brother", sentence: "Her brother was a vamp.", score: 0, lesson: "2 I" },
-          { word: "called", sentence: "I wish you had called me.", score: 0, lesson: "2 I" },
-          { word: "cat", sentence: "The cat would like to eat the mouse.", score: 0, lesson: "2 I" },
-          { word: "come", sentence: "I can come back.", score: 0, lesson: "2 I" },
-          { word: "could", sentence: "How could he find out?", score: 0, lesson: "2 I" },
-          { word: "day", sentence: "It is the day of the Lord.", score: 0, lesson: "2 I" },
-          { word: "dog", sentence: "Does a dog have ears?", score: 0, lesson: "2 I" },
-          { word: "down", sentence: "They sat down at the table.", score: 0, lesson: "2 I" },
-          { word: "find", sentence: "The enemy will find it out.", score: 0, lesson: "2 I" },
-          { word: "first", sentence: "It was the first money", score: 0, lesson: "2 I" },
-          { word: "from", sentence: "He leaped from his horse.", score: 0, lesson: "2 I" },
-          { word: "funny", sentence: "He's acting funny today.", score: 0, lesson: "2 I" },
-          { word: "get", sentence: "Let's get the kids ready to go.", score: 0, lesson: "2 I" },
-          { word: "going", sentence: "He was going to call the doctor.", score: 0, lesson: "2 I" },
-          { word: "good", sentence: "You have a good family.", score: 0, lesson: "2 I" },
-          { word: "got", sentence: "I just got a call from the doctor.", score: 0, lesson: "2 I" },
-          { word: "had", sentence: "She had a choice.", score: 0, lesson: "2 I" },
-          { word: "half", sentence: "I was awake half the night.", score: 0, lesson: "2 I" },
+        {
+          word: "about",
+          sentence: "I love thinking about the future.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "after",
+          sentence: "He has come after me.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "again",
+          sentence: "She fell asleep again when he left the room.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "also",
+          sentence: "He was also dressed for the exclusive party.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "away",
+          sentence: "Take that stuff away!",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "back",
+          sentence: "I'm going back home.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "because",
+          sentence: "Because you are sorry for him!",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "before",
+          sentence: "Night came on before he had finished it.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "brother",
+          sentence: "Her brother was a vamp.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "called",
+          sentence: "I wish you had called me.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "cat",
+          sentence: "The cat would like to eat the mouse.",
+          score: 0,
+          lesson: "2 I",
+        },
+        { word: "come", sentence: "I can come back.", score: 0, lesson: "2 I" },
+        {
+          word: "could",
+          sentence: "How could he find out?",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "day",
+          sentence: "It is the day of the Lord.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "dog",
+          sentence: "Does a dog have ears?",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "down",
+          sentence: "They sat down at the table.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "find",
+          sentence: "The enemy will find it out.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "first",
+          sentence: "It was the first money",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "from",
+          sentence: "He leaped from his horse.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "funny",
+          sentence: "He's acting funny today.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "get",
+          sentence: "Let's get the kids ready to go.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "going",
+          sentence: "He was going to call the doctor.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "good",
+          sentence: "You have a good family.",
+          score: 0,
+          lesson: "2 I",
+        },
+        {
+          word: "got",
+          sentence: "I just got a call from the doctor.",
+          score: 0,
+          lesson: "2 I",
+        },
+        { word: "had", sentence: "She had a choice.", score: 0, lesson: "2 I" },
+        {
+          word: "half",
+          sentence: "I was awake half the night.",
+          score: 0,
+          lesson: "2 I",
+        },
 
-          { word: "have", sentence: "You'll all have to walk.", score: 0, lesson: "2 II" },
-          { word: "high", sentence: "Her instincts on high alarm", score: 0, lesson: "2 II" },
-          { word: "him", sentence: "I'm not like him", score: 0, lesson: "2 II" },
-          { word: "house", sentence: "A house without children is not a home.", score: 0, lesson: "2 II" },
-          { word: "how", sentence: "How beautiful it is!", score: 0, lesson: "2 II" },
-          { word: "into", sentence: "Alex tossed her into the air.", score: 0, lesson: "2 II" },
-          { word: "jump", sentence: "Bison can jump six feet high.", score: 0, lesson: "2 II" },
-          { word: "just", sentence: "I just did it.", score: 0, lesson: "2 II" },
-          { word: "keep", sentence: "Keep to the left!", score: 0, lesson: "2 II" },
-          { word: "kind", sentence: "The years had not been kind to him.", score: 0, lesson: "2 II" },
-          { word: "like", sentence: "The people did not like this.", score: 0, lesson: "2 II" },
-          { word: "little", sentence: "The little man shook his bald head.", score: 0, lesson: "2 II" },
-          { word: "live", sentence: "I live with my mother and daughter.", score: 0, lesson: "2 II" },
-          { word: "long", sentence: "And I will be for a very long time.", score: 0, lesson: "2 II" },
-          { word: "look", sentence: "Do I look that bad?", score: 0, lesson: "2 II" },
-          { word: "low", sentence: "His voice was low and husky.", score: 0, lesson: "2 II" },
-          { word: "made", sentence: "Katie made a face.", score: 0, lesson: "2 II" },
-          { word: "make", sentence: "That does make sense.", score: 0, lesson: "2 II" },
-          { word: "many", sentence: "You ask too many questions.", score: 0, lesson: "2 II" },
-          { word: "may", sentence: "May we come in?", score: 0, lesson: "2 II" },
-          { word: "more", sentence: "Think no more about it, he said.", score: 0, lesson: "2 II" },
-          { word: "much", sentence: "How much is it, Dad?", score: 0, lesson: "2 II" },
-          { word: "name", sentence: "Her name is Allie.", score: 0, lesson: "2 II" },
+        {
+          word: "have",
+          sentence: "You'll all have to walk.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "high",
+          sentence: "Her instincts on high alarm",
+          score: 0,
+          lesson: "2 II",
+        },
+        { word: "him", sentence: "I'm not like him", score: 0, lesson: "2 II" },
+        {
+          word: "house",
+          sentence: "A house without children is not a home.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "how",
+          sentence: "How beautiful it is!",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "into",
+          sentence: "Alex tossed her into the air.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "jump",
+          sentence: "Bison can jump six feet high.",
+          score: 0,
+          lesson: "2 II",
+        },
+        { word: "just", sentence: "I just did it.", score: 0, lesson: "2 II" },
+        {
+          word: "keep",
+          sentence: "Keep to the left!",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "kind",
+          sentence: "The years had not been kind to him.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "like",
+          sentence: "The people did not like this.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "little",
+          sentence: "The little man shook his bald head.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "live",
+          sentence: "I live with my mother and daughter.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "long",
+          sentence: "And I will be for a very long time.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "look",
+          sentence: "Do I look that bad?",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "low",
+          sentence: "His voice was low and husky.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "made",
+          sentence: "Katie made a face.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "make",
+          sentence: "That does make sense.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "many",
+          sentence: "You ask too many questions.",
+          score: 0,
+          lesson: "2 II",
+        },
+        { word: "may", sentence: "May we come in?", score: 0, lesson: "2 II" },
+        {
+          word: "more",
+          sentence: "Think no more about it, he said.",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "much",
+          sentence: "How much is it, Dad?",
+          score: 0,
+          lesson: "2 II",
+        },
+        {
+          word: "name",
+          sentence: "Her name is Allie.",
+          score: 0,
+          lesson: "2 II",
+        },
 
-          { word: "new", sentence: "Is it something new for the trip?", score: 0, lesson: "2 III" },
-          { word: "next", sentence: "The kids are in the next room.", score: 0, lesson: "2 III" },
-          { word: "night", sentence: "That night... was Dad's birthday.", score: 0, lesson: "2 III" },
-          { word: "not", sentence: "I am not saying we live in a utopia.", score: 0, lesson: "2 III" },
-          { word: "now", sentence: "Now go home and get some rest.", score: 0, lesson: "2 III" },
-          { word: "off", sentence: "I'll send it off to find out.", score: 0, lesson: "2 III" },
-          { word: "once", sentence: "Once again she sighed deeply.", score: 0, lesson: "2 III" },
-          { word: "other", sentence: "In other words, it's none of my business.", score: 0, lesson: "2 III" },
-          { word: "our", sentence: "This is our house", score: 0, lesson: "2 III" },
-          { word: "out", sentence: "Carmen held out a hand.", score: 0, lesson: "2 III" },
-          { word: "over", sentence: "He is famous all over the world.", score: 0, lesson: "2 III" },
-          { word: "people", sentence: "People on top of the earth are all meat.", score: 0, lesson: "2 III" },
-          { word: "pick", sentence: "I'll soon pick it up.", score: 0, lesson: "2 III" },
-          { word: "play", sentence: "Want to play a game?", score: 0, lesson: "2 III" },
-          { word: "right", sentence: "Still, he had the right to know.", score: 0, lesson: "2 III" },
-          { word: "said", sentence: "She said something and then rode ahead.", score: 0, lesson: "2 III" },
-          { word: "saw", sentence: "The wolf saw him.", score: 0, lesson: "2 III" },
-          { word: "seen", sentence: "No, I think I've seen enough.", score: 0, lesson: "2 III" },
-          { word: "should", sentence: "It should be ready now.", score: 0, lesson: "2 III" },
-          { word: "sister", sentence: "My sister is coming to visit.", score: 0, lesson: "2 III" },
-          { word: "take", sentence: "I can take care of myself.", score: 0, lesson: "2 III" },
-          { word: "thank", sentence: "Thank you for inviting us.", score: 0, lesson: "2 III" },
-          { word: "that", sentence: "Well, if my cooking is that bad...", score: 0, lesson: "2 III" },
-          { word: "their", sentence: "Why don't you put her on the bed in their room?", score: 0, lesson: "2 III" },
-          { word: "them", sentence: "We'll take care of them together.", score: 0, lesson: "2 III" },
-          
-          { word: "then", sentence: "Then he picked up another box.", score: 0, lesson: "2 IV" },
-          { word: "these", sentence: "How long would these mind games go on?", score: 0, lesson: "2 IV" },
-          { word: "they", sentence: "They can actually talk!", score: 0, lesson: "2 IV" },
-          { word: "thing", sentence: "It was a foolish thing to say.", score: 0, lesson: "2 IV" },
-          { word: "took", sentence: "What took you so long?", score: 0, lesson: "2 IV" },
-          { word: "tree", sentence: "Who made tree grow in house?", score: 0, lesson: "2 IV" },
-          { word: "use", sentence: "I could use the help.", score: 0, lesson: "2 IV" },
-          { word: "very", sentence: "You love him very much.", score: 0, lesson: "2 IV" },
-          { word: "walk", sentence: "My sister can walk and run.", score: 0, lesson: "2 IV" },
-          { word: "want", sentence: "I do not want all this.", score: 0, lesson: "2 IV" },
-          { word: "was", sentence: "His voice was controlled.", score: 0, lesson: "2 IV" },
-          { word: "weather", sentence: "I'm surprised to say the weather was better.", score: 0, lesson: "2 IV" },
-          { word: "went", sentence: "I went along with it.", score: 0, lesson: "2 IV" },
-          { word: "where", sentence: "Where are you? he asked.", score: 0, lesson: "2 IV" },
-          { word: "which", sentence: "All of which was beside the point.", score: 0, lesson: "2 IV" },
-          { word: "who", sentence: "Who had handed it to her?", score: 0, lesson: "2 IV" },
-          { word: "with", sentence: "She came to the airport with him.", score: 0, lesson: "2 IV" },
-          { word: "work", sentence: "It did work this morning.", score: 0, lesson: "2 IV" },
-          { word: "would", sentence: "That would be the best way.", score: 0, lesson: "2 IV" },
-          { word: "write", sentence: "Let him write the truth.", score: 0, lesson: "2 IV" },
-          { word: "yes", sentence: "Yes, but I don't have time.", score: 0, lesson: "2 IV" },
-          { word: "you", sentence: "I love you so much.", score: 0, lesson: "2 IV" },
-          { word: "your", sentence: "What is your father's name?", score: 0, lesson: "2 IV" },
+        {
+          word: "new",
+          sentence: "Is it something new for the trip?",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "next",
+          sentence: "The kids are in the next room.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "night",
+          sentence: "That night... was Dad's birthday.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "not",
+          sentence: "I am not saying we live in a utopia.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "now",
+          sentence: "Now go home and get some rest.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "off",
+          sentence: "I'll send it off to find out.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "once",
+          sentence: "Once again she sighed deeply.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "other",
+          sentence: "In other words, it's none of my business.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "our",
+          sentence: "This is our house",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "out",
+          sentence: "Carmen held out a hand.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "over",
+          sentence: "He is famous all over the world.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "people",
+          sentence: "People on top of the earth are all meat.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "pick",
+          sentence: "I'll soon pick it up.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "play",
+          sentence: "Want to play a game?",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "right",
+          sentence: "Still, he had the right to know.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "said",
+          sentence: "She said something and then rode ahead.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "saw",
+          sentence: "The wolf saw him.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "seen",
+          sentence: "No, I think I've seen enough.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "should",
+          sentence: "It should be ready now.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "sister",
+          sentence: "My sister is coming to visit.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "take",
+          sentence: "I can take care of myself.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "thank",
+          sentence: "Thank you for inviting us.",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "that",
+          sentence: "Well, if my cooking is that bad...",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "their",
+          sentence: "Why don't you put her on the bed in their room?",
+          score: 0,
+          lesson: "2 III",
+        },
+        {
+          word: "them",
+          sentence: "We'll take care of them together.",
+          score: 0,
+          lesson: "2 III",
+        },
 
-          { word: "accident", sentence: "A car accident", score: 0, lesson: "3 I" },
-          { word: "accidentally", sentence: "the girls who accidentally get hit by cars", score: 0, lesson: "3 I" },
-          { word: "actual", sentence: "Without the actual bones", score: 0, lesson: "3 I" },
-          { word: "actually", sentence: "Her eyes actually were filled with tears.", score: 0, lesson: "3 I" },
-          { word: "address", sentence: "My email address is in there, too.", score: 0, lesson: "3 I" },
-          { word: "answer", sentence: "He put her answer down in his note book.", score: 0, lesson: "3 I" },
-          { word: "appear", sentence: "They didn't appear to be moving quickly.", score: 0, lesson: "3 I" },
-          { word: "arrive", sentence: "We expect visitors to arrive soon.", score: 0, lesson: "3 I" },
-          { word: "believe", sentence: "I don't believe that.", score: 0, lesson: "3 I" },
-          { word: "bicycle", sentence: "for riding a bicycle", score: 0, lesson: "3 I" },
-          { word: "breath", sentence: "His breath smelled of liquor.", score: 0, lesson: "3 I" },
-          { word: "breathe", sentence: "Rissa forced herself to breathe steadily.", score: 0, lesson: "3 I" },
-          { word: "build", sentence: "He paused, to build the suspense.", score: 0, lesson: "3 I" },
-          { word: "busy", sentence: "It's a large and busy hotel.", score: 0, lesson: "3 I" },
-          { word: "business", sentence: "I mean, I could still have my business in town.", score: 0, lesson: "3 I" },
-          { word: "calendar", sentence: "My calendar fills up quickly.", score: 0, lesson: "3 I" },
-          { word: "caught", sentence: "You just happened to get caught on camera.", score: 0, lesson: "3 I" },
-          { word: "centre", sentence: "The largest of these is situated in the centre of Cheduba island.", score: 0, lesson: "3 I" },
-          { word: "century", sentence: "We're living in the 21st century, Mary.", score: 0, lesson: "3 I" },
-          { word: "certain", sentence: "I feel certain of it.", score: 0, lesson: "3 I" },
-          { word: "circle", sentence: "She drew a circle in the air.", score: 0, lesson: "3 I" },
-          { word: "complete", sentence: "He has devised a complete explanation.", score: 0, lesson: "3 I" },
-          { word: "consider", sentence: "Consider it a fact.", score: 0, lesson: "3 I" },
-          { word: "continue", sentence: "He would continue until he was satisfied.", score: 0, lesson: "3 I" },
+        {
+          word: "then",
+          sentence: "Then he picked up another box.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "these",
+          sentence: "How long would these mind games go on?",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "they",
+          sentence: "They can actually talk!",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "thing",
+          sentence: "It was a foolish thing to say.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "took",
+          sentence: "What took you so long?",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "tree",
+          sentence: "Who made tree grow in house?",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "use",
+          sentence: "I could use the help.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "very",
+          sentence: "You love him very much.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "walk",
+          sentence: "My sister can walk and run.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "want",
+          sentence: "I do not want all this.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "was",
+          sentence: "His voice was controlled.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "weather",
+          sentence: "I'm surprised to say the weather was better.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "went",
+          sentence: "I went along with it.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "where",
+          sentence: "Where are you? he asked.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "which",
+          sentence: "All of which was beside the point.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "who",
+          sentence: "Who had handed it to her?",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "with",
+          sentence: "She came to the airport with him.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "work",
+          sentence: "It did work this morning.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "would",
+          sentence: "That would be the best way.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "write",
+          sentence: "Let him write the truth.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "yes",
+          sentence: "Yes, but I don't have time.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "you",
+          sentence: "I love you so much.",
+          score: 0,
+          lesson: "2 IV",
+        },
+        {
+          word: "your",
+          sentence: "What is your father's name?",
+          score: 0,
+          lesson: "2 IV",
+        },
 
-          { word: "decide", sentence: "I hope you decide to take the job.", score: 0, lesson: "3 II" },
-          { word: "describe", sentence: "I can't describe how helpless I felt.", score: 0, lesson: "3 II" },
-          { word: "different", sentence: "He's a different person, entirely.", score: 0, lesson: "3 II" },
-          { word: "difficult", sentence: "It must be difficult for Alex to keep you happy.", score: 0, lesson: "3 II" },
-          { word: "disappear", sentence: "They will simply disappear from daily use.", score: 0, lesson: "3 II" },
-          { word: "early", sentence: "It's late and I have to get up early tomorrow.", score: 0, lesson: "3 II" },
-          { word: "earth", sentence: "She hacked at the dry earth with her hoe.", score: 0, lesson: "3 II" },
-          { word: "eight", sentence: "It was already nearing eight o'clock.", score: 0, lesson: "3 II" },
-          { word: "eighth", sentence: "From Mohl down to the eighth decade ", score: 0, lesson: "3 II" },
-          { word: "enough", sentence: "I've taken up enough of his time.", score: 0, lesson: "3 II" },
-          { word: "exercise", sentence: "I see you're getting your exercise for the day.", score: 0, lesson: "3 II" },
-          { word: "experience", sentence: "He has a lot of experience in these matters.", score: 0, lesson: "3 II" },
-          { word: "experiment", sentence: "I shut down my experiment at six o'clock.", score: 0, lesson: "3 II" },
-          { word: "extreme", sentence: "The situation called for extreme measures.", score: 0, lesson: "3 II" },
-          { word: "famous", sentence: "It is still a famous school.", score: 0, lesson: "3 II" },
-          { word: "favourite", sentence: "At first his favourite subject was classics.", score: 0, lesson: "3 II" },
-          { word: "February", sentence: "On the 11th of February he died.", score: 0, lesson: "3 II" },
-          { word: "forward", sentence: "She stepped forward and hugged him.", score: 0, lesson: "3 II" },
-          { word: "fruit", sentence: "Beetroot for sugar, grain and fruit are also grown.", score: 0, lesson: "3 II" },
-          { word: "grammar", sentence: "The grammar school was founded in 1618.", score: 0, lesson: "3 II" },
-          { word: "group", sentence: "He stopped, watching a group of freight wagons.", score: 0, lesson: "3 II" },
-          { word: "guard", sentence: "I heard you were a guard at Canon City.", score: 0, lesson: "3 II" },
-          { word: "guide", sentence: "He will guide her when I am gone.", score: 0, lesson: "3 II" },
-          { word: "heard", sentence: "I heard you scream.", score: 0, lesson: "3 II" },
-          { word: "heart", sentence: "Her heart was starting to flutter.", score: 0, lesson: "3 II" },
-          { word: "height", sentence: "The mountain ridges vary in height up to 4000 ft.", score: 0, lesson: "3 II" },
+        {
+          word: "accident",
+          sentence: "A car accident",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "accidentally",
+          sentence: "the girls who accidentally get hit by cars",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "actual",
+          sentence: "Without the actual bones",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "actually",
+          sentence: "Her eyes actually were filled with tears.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "address",
+          sentence: "My email address is in there, too.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "answer",
+          sentence: "He put her answer down in his note book.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "appear",
+          sentence: "They didn't appear to be moving quickly.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "arrive",
+          sentence: "We expect visitors to arrive soon.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "believe",
+          sentence: "I don't believe that.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "bicycle",
+          sentence: "for riding a bicycle",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "breath",
+          sentence: "His breath smelled of liquor.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "breathe",
+          sentence: "Rissa forced herself to breathe steadily.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "build",
+          sentence: "He paused, to build the suspense.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "busy",
+          sentence: "It's a large and busy hotel.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "business",
+          sentence: "I mean, I could still have my business in town.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "calendar",
+          sentence: "My calendar fills up quickly.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "caught",
+          sentence: "You just happened to get caught on camera.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "centre",
+          sentence:
+            "The largest of these is situated in the centre of Cheduba island.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "century",
+          sentence: "We're living in the 21st century, Mary.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "certain",
+          sentence: "I feel certain of it.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "circle",
+          sentence: "She drew a circle in the air.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "complete",
+          sentence: "He has devised a complete explanation.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "consider",
+          sentence: "Consider it a fact.",
+          score: 0,
+          lesson: "3 I",
+        },
+        {
+          word: "continue",
+          sentence: "He would continue until he was satisfied.",
+          score: 0,
+          lesson: "3 I",
+        },
 
-          { word: "history", sentence: "Is there some history I should know about?", score: 0, lesson: "3 III" },
-          { word: "imagine", sentence: "Can you imagine that?", score: 0, lesson: "3 III" },
-          { word: "increase", sentence: "That would increase the value of the house.", score: 0, lesson: "3 III" },
-          { word: "important", sentence: "What's important is that you're alive.", score: 0, lesson: "3 III" },
-          { word: "interest", sentence: "Somehow it failed to interest me.", score: 0, lesson: "3 III" },
-          { word: "island", sentence: "He swam to an island that was not far away.", score: 0, lesson: "3 III" },
-          { word: "knowledge", sentence: "We are becoming a knowledge economy.", score: 0, lesson: "3 III" },
-          { word: "learn", sentence: "I have to learn to control myself.", score: 0, lesson: "3 III" },
-          { word: "length", sentence: "His canines were four times the length of hers.", score: 0, lesson: "3 III" },
-          { word: "library", sentence: "She left the library to return Damian's phone.", score: 0, lesson: "3 III" },
-          { word: "material", sentence: "She had nothing material to report.", score: 0, lesson: "3 III" },
-          { word: "medicine", sentence: "Medicine isn't an exact science.", score: 0, lesson: "3 III" },
-          { word: "mention", sentence: "He didn't even mention her family.", score: 0, lesson: "3 III" },
-          { word: "minute", sentence: "I need a minute to cool down.", score: 0, lesson: "3 III" },
-          { word: "natural", sentence: "We think he might have some natural ability.", score: 0, lesson: "3 III" },
-          { word: "naughty", sentence: "You are a very naughty witch.", score: 0, lesson: "3 III" },
-          { word: "notice", sentence: "Others don't notice it, but I see it.", score: 0, lesson: "3 III" },
-          { word: "occasion", sentence: "He was excited to see her dressed up for the occasion.", score: 0, lesson: "3 III" },
-          { word: "occasionally", sentence: "Occasionally he would stand and bark.", score: 0, lesson: "3 III" },
-          { word: "often", sentence: "Poor people are often sick.", score: 0, lesson: "3 III" },
-          { word: "opposite", sentence: "They rode up the opposite hill.", score: 0, lesson: "3 III" },
-          { word: "ordinary", sentence: "Alex was no ordinary man.", score: 0, lesson: "3 III" },
-          { word: "particular", sentence: "The crowd seemed clustered at one particular spot.", score: 0, lesson: "3 III" },
-          { word: "peculiar", sentence: "A peculiar kind of sugar called quercite exists in all acorns.", score: 0, lesson: "3 III" },
-          { word: "perhaps", sentence: "Perhaps it was a foolish thing to do.", score: 0, lesson: "3 III" },
+        {
+          word: "decide",
+          sentence: "I hope you decide to take the job.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "describe",
+          sentence: "I can't describe how helpless I felt.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "different",
+          sentence: "He's a different person, entirely.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "difficult",
+          sentence: "It must be difficult for Alex to keep you happy.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "disappear",
+          sentence: "They will simply disappear from daily use.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "early",
+          sentence: "It's late and I have to get up early tomorrow.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "earth",
+          sentence: "She hacked at the dry earth with her hoe.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "eight",
+          sentence: "It was already nearing eight o'clock.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "eighth",
+          sentence: "From Mohl down to the eighth decade ",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "enough",
+          sentence: "I've taken up enough of his time.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "exercise",
+          sentence: "I see you're getting your exercise for the day.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "experience",
+          sentence: "He has a lot of experience in these matters.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "experiment",
+          sentence: "I shut down my experiment at six o'clock.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "extreme",
+          sentence: "The situation called for extreme measures.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "famous",
+          sentence: "It is still a famous school.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "favourite",
+          sentence: "At first his favourite subject was classics.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "February",
+          sentence: "On the 11th of February he died.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "forward",
+          sentence: "She stepped forward and hugged him.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "fruit",
+          sentence: "Beetroot for sugar, grain and fruit are also grown.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "grammar",
+          sentence: "The grammar school was founded in 1618.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "group",
+          sentence: "He stopped, watching a group of freight wagons.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "guard",
+          sentence: "I heard you were a guard at Canon City.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "guide",
+          sentence: "He will guide her when I am gone.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "heard",
+          sentence: "I heard you scream.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "heart",
+          sentence: "Her heart was starting to flutter.",
+          score: 0,
+          lesson: "3 II",
+        },
+        {
+          word: "height",
+          sentence: "The mountain ridges vary in height up to 4000 ft.",
+          score: 0,
+          lesson: "3 II",
+        },
 
-          { word: "popular", sentence: "You're certainly popular tonight.", score: 0, lesson: "3 IV" },
-          { word: "position", sentence: "Han chuckled from his position near the window.", score: 0, lesson: "3 IV" },
-          { word: "possession", sentence: "In the result nothing disturbed his peaceable possession of the see.", score: 0, lesson: "3 IV" },
-          { word: "possess", sentence: "What truth would he possess?", score: 0, lesson: "3 IV" },
-          { word: "possible", sentence: "I have only three possible answers.", score: 0, lesson: "3 IV" },
-          { word: "potatoes", sentence: "The potatoes were ruined.", score: 0, lesson: "3 IV" },
-          { word: "pressure", sentence: "Let me put pressure on it.", score: 0, lesson: "3 IV" },
-          { word: "probably", sentence: "She was probably right.", score: 0, lesson: "3 IV" },
-          { word: "promise", sentence: "I promise not to harm you.", score: 0, lesson: "3 IV" },
-          { word: "purpose", sentence: "If you win or lose, let it be on purpose.", score: 0, lesson: "3 IV" },
-          { word: "quarter", sentence: "He inhabited a separate quarter of the city.", score: 0, lesson: "3 IV" },
-          { word: "question", sentence: "It wasn't a question, but a flat statement.", score: 0, lesson: "3 IV" },
-          { word: "recent", sentence: "It was a recent decision.", score: 0, lesson: "3 IV" },
-          { word: "regular", sentence: "For a long time I had no regular lessons.", score: 0, lesson: "3 IV" },
-          { word: "reign", sentence: "We can no longer both reign together.", score: 0, lesson: "3 IV" },
-          { word: "remember", sentence: "Do you remember that rumor in school?", score: 0, lesson: "3 IV" },
-          { word: "sentence", sentence: "He typed a short sentence, and then stopped.", score: 0, lesson: "3 IV" },
-          { word: "separate", sentence: "Absolutely. You are two separate people.", score: 0, lesson: "3 IV" },
+        {
+          word: "history",
+          sentence: "Is there some history I should know about?",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "imagine",
+          sentence: "Can you imagine that?",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "increase",
+          sentence: "That would increase the value of the house.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "important",
+          sentence: "What's important is that you're alive.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "interest",
+          sentence: "Somehow it failed to interest me.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "island",
+          sentence: "He swam to an island that was not far away.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "knowledge",
+          sentence: "We are becoming a knowledge economy.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "learn",
+          sentence: "I have to learn to control myself.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "length",
+          sentence: "His canines were four times the length of hers.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "library",
+          sentence: "She left the library to return Damian's phone.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "material",
+          sentence: "She had nothing material to report.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "medicine",
+          sentence: "Medicine isn't an exact science.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "mention",
+          sentence: "He didn't even mention her family.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "minute",
+          sentence: "I need a minute to cool down.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "natural",
+          sentence: "We think he might have some natural ability.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "naughty",
+          sentence: "You are a very naughty witch.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "notice",
+          sentence: "Others don't notice it, but I see it.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "occasion",
+          sentence: "He was excited to see her dressed up for the occasion.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "occasionally",
+          sentence: "Occasionally he would stand and bark.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "often",
+          sentence: "Poor people are often sick.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "opposite",
+          sentence: "They rode up the opposite hill.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "ordinary",
+          sentence: "Alex was no ordinary man.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "particular",
+          sentence: "The crowd seemed clustered at one particular spot.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "peculiar",
+          sentence:
+            "A peculiar kind of sugar called quercite exists in all acorns.",
+          score: 0,
+          lesson: "3 III",
+        },
+        {
+          word: "perhaps",
+          sentence: "Perhaps it was a foolish thing to do.",
+          score: 0,
+          lesson: "3 III",
+        },
 
-          { word: "special", sentence: "It's nice to have that special respect.", score: 0, lesson: "3 V" },
-          { word: "straight", sentence: "She looked him straight in the eye.", score: 0, lesson: "3 V" },
-          { word: "strange", sentence: "Howard gave him a strange look.", score: 0, lesson: "3 V" },
-          { word: "strength", sentence: "You've got to keep your strength up.", score: 0, lesson: "3 V" },
-          { word: "suppose", sentence: "I don't suppose he'd agree.", score: 0, lesson: "3 V" },
-          { word: "surprise", sentence: "He likes to surprise people.", score: 0, lesson: "3 V" },
-          { word: "therefore", sentence: "And therefore, no one is with me.", score: 0, lesson: "3 V" },
-          { word: "though", sentence: "She looked at them as though they had betrayed her.", score: 0, lesson: "3 V" },
-          { word: "although", sentence: "Although she was exhausted, sleep didn't come.", score: 0, lesson: "3 V" },
-          { word: "thought", sentence: "I never thought I could do it.", score: 0, lesson: "3 V" },
-          { word: "through", sentence: "He ran a hand through his hair.", score: 0, lesson: "3 V" },
-          { word: "various", sentence: "Response to the various greetings.", score: 0, lesson: "3 V" },
-          { word: "weight", sentence: "Deidre let her full weight settle against him.", score: 0, lesson: "3 V" },
-          { word: "woman", sentence: "The woman screamed piercingly.", score: 0, lesson: "3 V" },
-          { word: "women", sentence: "Do you make many women cry?", score: 0, lesson: "3 V" },
+        {
+          word: "popular",
+          sentence: "You're certainly popular tonight.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "position",
+          sentence: "Han chuckled from his position near the window.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "possession",
+          sentence:
+            "In the result nothing disturbed his peaceable possession of the see.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "possess",
+          sentence: "What truth would he possess?",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "possible",
+          sentence: "I have only three possible answers.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "potatoes",
+          sentence: "The potatoes were ruined.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "pressure",
+          sentence: "Let me put pressure on it.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "probably",
+          sentence: "She was probably right.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "promise",
+          sentence: "I promise not to harm you.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "purpose",
+          sentence: "If you win or lose, let it be on purpose.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "quarter",
+          sentence: "He inhabited a separate quarter of the city.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "question",
+          sentence: "It wasn't a question, but a flat statement.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "recent",
+          sentence: "It was a recent decision.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "regular",
+          sentence: "For a long time I had no regular lessons.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "reign",
+          sentence: "We can no longer both reign together.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "remember",
+          sentence: "Do you remember that rumor in school?",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "sentence",
+          sentence: "He typed a short sentence, and then stopped.",
+          score: 0,
+          lesson: "3 IV",
+        },
+        {
+          word: "separate",
+          sentence: "Absolutely. You are two separate people.",
+          score: 0,
+          lesson: "3 IV",
+        },
 
-          { word: "jolly", sentence: "He was a jolly man full of jokes.", score: 0, lesson: "4 I" },
-          { word: "jolliest", sentence: "She is the jolliest in the class.", score: 0, lesson: "4 I" },
-          { word: "happier", sentence: "She is happeir than yesterday", score: 0, lesson: "4 I" },
-          { word: "beautiful", sentence: "Szaffi is soo beautiful", score: 0, lesson: "4 I" },
-          { word: "everybody", sentence: "Everybody listen", score: 0, lesson: "4 I" },
-          { word: "speaker", sentence: "This speaker is loud", score: 0, lesson: "4 I" },
-          { word: "improve", sentence: "You need to improve your spellings", score: 0, lesson: "4 I" },
-          { word: "should", sentence: "You should dress nicely in a restaurant", score: 0, lesson: "4 I" },
-          { word: "says", sentence: "He says is a good idea", score: 0, lesson: "4 I" },
-          { word: "your", sentence: "Is this pen is your one", score: 0, lesson: "4 I" },
-          { word: "horrible", sentence: "This colour is horrible", score: 0, lesson: "4 I" },
-          { word: "probably", sentence: "You should propably eat chocolate ice cream", score: 0, lesson: "4 I" },
-         
+        {
+          word: "special",
+          sentence: "It's nice to have that special respect.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "straight",
+          sentence: "She looked him straight in the eye.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "strange",
+          sentence: "Howard gave him a strange look.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "strength",
+          sentence: "You've got to keep your strength up.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "suppose",
+          sentence: "I don't suppose he'd agree.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "surprise",
+          sentence: "He likes to surprise people.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "therefore",
+          sentence: "And therefore, no one is with me.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "though",
+          sentence: "She looked at them as though they had betrayed her.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "although",
+          sentence: "Although she was exhausted, sleep didn't come.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "thought",
+          sentence: "I never thought I could do it.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "through",
+          sentence: "He ran a hand through his hair.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "various",
+          sentence: "Response to the various greetings.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "weight",
+          sentence: "Deidre let her full weight settle against him.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "woman",
+          sentence: "The woman screamed piercingly.",
+          score: 0,
+          lesson: "3 V",
+        },
+        {
+          word: "women",
+          sentence: "Do you make many women cry?",
+          score: 0,
+          lesson: "3 V",
+        },
 
-          { word: "actual", sentence: "Without the actual bones", score: 0, lesson: "4 II" },
-          { word: "actually", sentence: "Her eyes actually were filled with tears.", score: 0, lesson: "4 II" },
-          { word: "address", sentence: "My email address is in there, too.", score: 0, lesson: "4 II" },
-          { word: "answer", sentence: "He put her answer down in his note book.", score: 0, lesson: "4 II" },
-          { word: "calendar", sentence: "My calendar fills up quickly.", score: 0, lesson: "4 II" },
-          { word: "disappear", sentence: "They will simply disappear from daily use.", score: 0, lesson: "4 II" },
-          { word: "exercise", sentence: "I see you're getting your exercise for the day.", score: 0, lesson: "4 II" },
-          { word: "experience", sentence: "He has a lot of experience in these matters.", score: 0, lesson: "4 II" },
-          { word: "experiment", sentence: "I shut down my experiment at six o'clock.", score: 0, lesson: "4 II" },
-          { word: "extreme", sentence: "The situation called for extreme measures.", score: 0, lesson: "4 II" },
-          { word: "particular", sentence: "The crowd seemed clustered at one particular spot.", score: 0, lesson: "4 II" },
-          { word: "peculiar", sentence: "A peculiar kind of sugar called quercite exists in all acorns.", score: 0, lesson: "4 II" },  
-          { word: "though", sentence: "She looked at them as though they had betrayed her.", score: 0, lesson: "4 II" },
-          { word: "although", sentence: "Although she was exhausted, sleep didn't come.", score: 0, lesson: "4 II" },
-          { word: "thought", sentence: "I never thought I could do it.", score: 0, lesson: "4 II" },
-          { word: "separate", sentence: "Absolutely. You are two separate people.", score: 0, lesson: "4 II" },
-          { word: "difficult", sentence: "It must be difficult for Alex to keep you happy.", score: 0, lesson: "4 II" },
-          { word: "disappear", sentence: "They will simply disappear from daily use.", score: 0, lesson: "4 II" },
-          { word: "grown", sentence: "She had grown some great flowers.", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "great", sentence: "She had grown some great flowers.", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "affect", sentence: "The chilly night didn't affect the sheep.", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "effect", sentence: "The effect of the dye in water was obvious.", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "through", sentence: "You could see through the metal grate. ", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "grate", sentence: "You could see through the metal grate. ", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "threw", sentence: "She threw the ball to her friend.", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "fare", sentence: "The fare price made them groan. ", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "groan", sentence: "The fare price made them groan. ", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "fair", sentence: "It was fair that they reflected at break time. ", score: 0, lesson: "4 autumn 1 week 1" },
-          { word: "heal", sentence: "Her heal needs to heel. ", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "heel", sentence: "Her heal needs to heel. ", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "check", sentence: "They needed to check they had the key. ", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "key", sentence: "They needed to check they had the key. ", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "cheque", sentence: "The cheque was presented with the medal. ", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "medal", sentence: "The cheque was presented with the medal. ", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "meddle", sentence: "Please don't meddle with the main door's lock.", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "main", sentence: "Please don't meddle with the main door's lock.", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "mane", sentence: "The horse's mane was glistening.", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "quay", sentence: "They met at the quay to search for the boat. ", score: 0, lesson: "4 autumn 1 week 2" },
-          { word: "science", sentence: "Her science knowledge was fascinating to hear.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "scenery", sentence: "The scene in the play had great scenery.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "discipline", sentence: "His discipline to work to his best was exemplary.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "crescent", sentence: "A crescent was made using scissors and paper.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "scissors", sentence: "A crescent was made using scissors and paper.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "scene", sentence: "The scene in the play had great scenery.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "descent", sentence: "The descent down the hill was tricky.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "ascend", sentence: "The flag would descend and ascend each day.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "descend", sentence: "The flag would descend and ascend each day.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "fascinate", sentence: "The diamond continues to fascinate visitors.", score: 0, lesson: "4 autumn 1 week 3" },
-          { word: "actual", sentence: "The actual time wasn't written on the calendar.", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "calendar", sentence: "The actual time wasn't written on the calendar.", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "thought", sentence: "He thought his address should be kept private.", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "address", sentence: "He thought his address should be kept private.", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "difficult", sentence: "It was difficult to separate the solids.", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "separate", sentence: "It was difficult to separate the solids.", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "disappear", sentence: "The stain wouldn't disappear.", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "experience", sentence: "Everyone had a pleasant experience on the trip.", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "weight", sentence: "The baggage weight was of particular importance. ", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "particular", sentence: "The baggage weight was of particular importance. ", score: 0, lesson: "4 autumn 1 week 4" },
-          { word: "comprehension", sentence: "The comprehension prompted a discussion. ", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "discussion", sentence: "The comprehension prompted a discussion. ", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "extension", sentence: "An extension was built without permission. ", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "permission", sentence: "An extension was built without permission. ", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "diversion", sentence: "The traffic diversion caused a lot of tension. ", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "tension", sentence: "The traffic diversion caused a lot of tension. ", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "suspension", sentence: "The suspension was broken on the bike.", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "occasion", sentence: "It was a happy occasion at the weekend.", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "dimension", sentence: "The dimension of the room is quite large.", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "expansion", sentence: "There was an expansion in the crack.", score: 0, lesson: "4 autumn 1 week 5" },
-          { word: "disappoint", sentence: "They won't disappoint the Queen. ", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "disagree", sentence: "Children can disagree but shouldn't misbehave. ", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "misbehave", sentence: "Children can disagree but shouldn't misbehave. ", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "misspell", sentence: "You might misspell the word disappear.", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "disappear", sentence: "You might misspell the word disappear.", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "disobey", sentence: "If drivers disobey traffic signs it can be dangerous. ", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "disconnect", sentence: "You must disconnect the shower to disinfect it. ", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "disinfect", sentence: "You must disconnect the shower to disinfect it. ", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "misled", sentence: "He was misled about the character's misfortune. ", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "misfortune", sentence: "He was misled about the character's misfortune. ", score: 0, lesson: "4 autumn 2 week 1" },
-          { word: "illegal", sentence: "Does illegal immigration take jobs from citizens?", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "illegible", sentence: "Illegible rebates will often not be processed.", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "illuminate", sentence: "Torch lights illuminate from a different level than the ground lighting.", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "illogical", sentence: "Not being feminist to me is just totally illogical.", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "illiterate", sentence: "He was indeed illiterate; ", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "illicit", sentence: "In the 18th century land grants and illicit trade led to serious disturbances.", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "illumination", sentence: "There is everywhere a certain illumination due to it.", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "illusion", sentence: "This will give the illusion of larger lips.", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "illusive", sentence: "The conscious life of all men is apparitional and illusive.", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "illustration", sentence: "A good illustration of it is peat.", score: 0, lesson: "4 autumn 2 week 2" },
-          { word: "information", sentence: "With information, we will distribute better.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "adoration", sentence: "His love to God as his Father was a passionate adoration which filled his whole heart.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "sensation", sentence: "The sensation was almost physical.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "preparation", sentence: "In this way my preparation for college went on without interruption.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "admiration", sentence: "His gaze swept over her in cold admiration as he spoke.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "foundation", sentence: "Indeed, All Souls was more of a lay foundation than its model.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "qualification", sentence: "The members' qualification is the possession of real.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "experimentation", sentence: "The twenties is still a time of experimentation and discovery.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "exploration", sentence: "Bliss when making his exploration of Jerusalem.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "examination", sentence: "Both passed the examination successfully.", score: 0, lesson: "4 autumn 2 week 3" },
-          { word: "notice", sentence: "Others don't notice it, but I see it.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "ordinary", sentence: "Alex was no ordinary man.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "certain", sentence: "I feel certain of it.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "suppose", sentence: "I suppose they're both a little artificial.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "breathe", sentence: "Rissa forced herself to breathe steadily.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "increase", sentence: "That would increase the value of the house.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "recent", sentence: "This memory was recent and came easily.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "quarter", sentence: "He inhabited a separate quarter of the city.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "group", sentence: "He stopped, watching a group of freight wagons.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "island", sentence: "He swam to an island that was not far away.", score: 0, lesson: "4 autumn 2 week 4" },
-          { word: "forgetting", sentence: "You're forgetting the underground railroad.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "forgotten", sentence: "Yeah, I'd forgotten about that.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "gardening", sentence: "Market gardening is an important industry.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "gardener", sentence: "He called for Taras the gardener, but no one replied.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "limiting", sentence: "This may mean limiting your protein to one meal.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "beginning", sentence: "He was beginning to hate the cold.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "beginner", sentence: "We always assume that everyone is a raw beginner.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "limitation", sentence: "But this limitation is always taken for granted.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "preferred", sentence: "The house was quiet, the way he preferred it.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "limitations", sentence: "It was said he had no limitations.", score: 0, lesson: "4 autumn 2 week 5" },
-          { word: "admiration", sentence: "They stood before it in silent admiration.", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "foundation", sentence: "You lay the foundation of your palaces.", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "forgotten", sentence: "Yeah, I'd forgotten about that.", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "gardening", sentence: "Market gardening is an important industry.", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "great", sentence: "You're doing a great job.", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "grate", sentence: "The fuel is burned on the grate of the inner firebox.", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "main", sentence: "His main sin appears to be his poor timing.", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "mane", sentence: "The tiger has no mane", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "fascinate", sentence: "The sky was sparkly enough to fascinate her.", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "comprehension", sentence: "Comprehension unknotted his brows.", score: 0, lesson: "4 spring 1 week 1" },
-          { word: "league", sentence: "He strongly opposed the League of Nations.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "tongue", sentence: "I was tongue tied, at a loss how to respond.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "antique", sentence: "But in some ways, it's like antique furniture.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "unique", sentence: "It wasn't so unique to be traceable.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "fatigue", sentence: "Perhaps it was fatigue from the long journey.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "intrigue", sentence: "Her life was notorious for intrigue and perfidy.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "rogue", sentence: "He went rogue and helped Katie evade you in the underworld.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "vague", sentence: "He was vague to say the least.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "opaque", sentence: "It can switch from opaque to clear.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "plaque", sentence: "A small, inscribed plaque is placed in front of the rose.", score: 0, lesson: "4 spring 1 week 2" },
-          { word: "expression", sentence: "His expression was unreadable.", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "possession", sentence: "It becomes your only possession.", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "discussion", sentence: "The last will require some discussion with Damian.", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "confession", sentence: "The confession consisted of forty articles.", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "permission", sentence: "Will you get permission for me?", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "admission", sentence: "Admission policies of grad schools", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "impression", sentence: "That's your impression of me?", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "omission", sentence: "This omission is sometimes believed to be an error.", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "emission", sentence: "The figures for greenhouse gas emission faired no better.", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "commission", sentence: "This was the last commission entrusted to him.", score: 0, lesson: "4 spring 1 week 3" },
-          { word: "although", sentence: "Certainly this could happen, although the odds are remote.", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "through", sentence: "He ran a hand through his hair.", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "potatoes", sentence: "The carrots and potatoes packed around it", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "enough", sentence: "She had enough for the entire family.", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "possess", sentence: "What truth would he possess?", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "natural", sentence: "We think he might have some natural ability.", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "believe", sentence: "I can't believe I've finally found you.", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "different", sentence: "He's a different person, entirely.", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "possible", sentence: "I have only three possible answers.", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "probably", sentence: "She was probably right.", score: 0, lesson: "4 spring 1 week 4" },
-          { word: "scheme", sentence: "The new scheme works splendidly.", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "chorus", sentence: "A chorus of voices ", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "chemist", sentence: "Bergman, the leading chemist in Sweden.", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "echo", sentence: "Nothing to echo off of, she supposed.", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "character", sentence: "It was totally out of character for her.", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "ache", sentence: "Cold air made his lungs ache", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "monarch", sentence: "Osman reigned as independent monarch until 1326.", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "stomach", sentence: "Her stomach contracted and then twisted into a knot.", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "orchid", sentence: "orchid flower", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "orchestra", sentence: "The diameter of the orchestra is 762 ft.", score: 0, lesson: "4 spring 1 week 5" },
-          { word: "invention", sentence: "Libra was not of Greek invention.", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "injection", sentence: "adrenaline injection", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "hesitation", sentence: "This time there was no hesitation, no rush.", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "completion", sentence: "the work before its completion.", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "continuation", sentence: "She relaxed and enjoyed the continuation of light banter.", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "opposition", sentence: "He's the opposition, remember?", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "pollution", sentence: "Air pollution comes from many different sources.", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "question", sentence: "It wasn't a question, but a flat statement.", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "affection", sentence: "He really did feel affection for her, if he was jealous.", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "attraction", sentence: "Still, admitting to any attraction seemed folly.", score: 0, lesson: "4 spring 2 week 1" },
-          { word: "poisonous", sentence: "Dulce gave her a poisonous stare.", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "dangerous", sentence: "You're treading on dangerous ground.", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "mountainous", sentence: "Though less mountainous than the other islands", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "famous", sentence: "It is still a famous school.", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "various", sentence: "She said nothing, barely nodding in response to the various greetings.", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "tremendous", sentence: "It will be a tremendous banquet.", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "enormous", sentence: "His income is said by Lucian to have reached an enormous figure.", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "jealous", sentence: "She doesn't have any reason to be jealous of me.", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "continuous", sentence: "All he sees is one continuous line.", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "contentious", sentence: "It has been a contentious issue for decades.", score: 0, lesson: "4 spring 2 week 2" },
-          { word: "courageous", sentence: "I hope I shall be courageous always.", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "outrageous", sentence: "The water bill was going to be outrageous.", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "serious", sentence: "This is serious stuff.", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "obvious", sentence: "But it is obvious to me that we can end war.", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "curious", sentence: "I'm just a curious citizen.", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "hideous", sentence: "Hideous forms floated before him.", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "spontaneous", sentence: "And Nicholas heard her spontaneous, happy, ringing laughter.", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "courteous", sentence: "At best, Alex would be courteous to him.", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "disastrous", sentence: "The war proved disastrous for Venice.", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "glamorous", sentence: "one of the world's most glamorous women", score: 0, lesson: "4 spring 2 week 3" },
-          { word: "complete", sentence: "He has devised a complete explanation.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "opposite", sentence: "They rode up the opposite hill.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "experiment", sentence: "I shut down my experiment at six o'clock.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "naughty", sentence: "You are a very naughty witch.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "grammar", sentence: "The grammar school was founded in 1618.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "knowledge", sentence: "We are becoming a knowledge economy.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "favourite", sentence: "At first his favourite subject was classics.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "caught", sentence: "You just happened to get caught on camera.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "promise", sentence: "I promise not to harm you.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "occasion", sentence: "He was excited to see her dressed up for the occasion.", score: 0, lesson: "4 spring 2 week 4" },
-          { word: "weather", sentence: "I'm surprised to say the weather was better.", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "whether", sentence: "I really don't know whether to finish him or not.", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "whose", sentence: "So whose bones are they?", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "who's", sentence: "who's who of beauty industry bigwigs.", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "accept", sentence: "Give her a little time to accept the idea.", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "except", sentence: "They won't even be together except weekends.", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "reign", sentence: "We can no longer both reign together.", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "rein", sentence: "I gave him free rein to do what he needs to.", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "dear", sentence: "I'll miss my dear brother.", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "deer", sentence: "A deer watched them from the trees.", score: 0, lesson: "4 spring 2 week 5" },
-          { word: "weather", sentence: "I'm surprised to say the weather was better.", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "whether", sentence: "I really don't know whether to finish him or not.", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "serious", sentence: "This is serious stuff.", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "obvious", sentence: "But it is obvious to me that we can end war.", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "completion", sentence: "the work before its completion.", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "dangerous", sentence: "You're treading on dangerous ground.", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "mountainous", sentence: "Though less mountainous than the other islands", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "tongue", sentence: "I was tongue tied, at a loss how to respond.", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "antique", sentence: "But in some ways, it's like antique furniture.", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "expression", sentence: "His expression was unreadable.", score: 0, lesson: "4 summer 1 week 1" },
-          { word: "basic", sentence: "I don't want to deny you such a basic need.", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "basically", sentence: "I basically asked him to stop.", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "frantic", sentence: "But all my frantic efforts were in vain.", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "frantically", sentence: " tried frantically to slip out of my blunder.", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "dramatic", sentence: "He was a powerful and dramatic preacher.", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "dramatically", sentence: "It relieves extra dry skin dramatically.", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "historic", sentence: "The cathedral is of great historic ", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "historically", sentence: "Of their origin nothing is historically known.", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "optimistic", sentence: "Jorge was optimistic and always saw the best in every situation.", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "optimistically", sentence: "He optimistically predicted success.", score: 0, lesson: "4 summer 1 week 2" },
-          { word: "subdivide", sentence: "Elwes we subdivide the whole subregion", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "subheading", sentence: "Use headings and subheadings to break up the text.", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "submarine", sentence: "A submarine cable connects the town with Zanzibar.", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "submerge", sentence: "Submerge the fruit in water and gently pull it apart.", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "antiseptic", sentence: "The antiseptic pine-laced air from the hallway made her nose wrinkle.", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "anticlockwise", sentence: "Almost like the touch screen was rotated slightly anticlockwise ", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "antisocial", sentence: "The car drivers were being particularly antisocial that day.", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "antibiotic", sentence: "They changed the antibiotic again.", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "autobiography", sentence: "His Autobiography was published in 1850.", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "autograph", sentence: "Autograph is written in the author's own handwriting.", score: 0, lesson: "4 summer 1 week 3" },
-          { word: "purpose", sentence: "If you win or lose, let it be on purpose.", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "straight", sentence: "She looked him straight in the eye.", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "surprise", sentence: "He likes to surprise people.", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "therefore", sentence: "He therefore gave him many beautiful gifts", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "pressure", sentence: "Let me put pressure on it.", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "peculiar", sentence: "Their peculiar business is expressed by the term", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "heard", sentence: "I heard you scream.", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "important", sentence: "What's important is that you're alive.", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "interest", sentence: "Somehow it failed to interest me.", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "consider", sentence: "Consider it a fact.", score: 0, lesson: "4 summer 1 week 4" },
-          { word: "interact", sentence: "I don't interact with people much.", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "intercity", sentence: "The newer intercity (IC) trains are modern", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "international", sentence: "Philadelphia International Airport.", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "interrelated", sentence: "A number of interrelated factors help you determine the proper ski length.", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "interchange", sentence: "There is an interchange of the divine and human attributes", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "interconnected", sentence: "All these districts are interconnected.", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "internet", sentence: "I recognized him from his silly Internet chatting.", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "intermediate", sentence: "It is intermediate in its nature between land and sky.", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "intermission", sentence: "I promise a short intermission before I give act two", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "interweave", sentence: "adapt or interweave such passages.", score: 0, lesson: "4 summer 1 week 5" },
-          { word: "children's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "people's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "men's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "mice's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "women's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "geese's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "fishermen's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "oxen's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "teeth's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "police's", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 2" },
-          { word: "girls'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "boys'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "babies'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "houses'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "sisters'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "trolleys'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "potatoes'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "pizzas'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "buses'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "arches'", sentence: "Focus: Possessive apostrophes with plural words", score: 0, lesson: "4 summer 2 week 1" },
-          { word: "address", sentence: "My email address is in there, too.", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "believe", sentence: "I don't believe that.", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "business", sentence: "I mean, I could still have my business in town.", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "complete", sentence: "He has devised a complete explanation.", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "different", sentence: "He's a different person, entirely.", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "eighth", sentence: "From Mohl down to the eighth decade ", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "experience", sentence: "He has a lot of experience in these matters.", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "increase", sentence: "That would increase the value of the house.", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "island", sentence: "He swam to an island that was not far away.", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "medicine", sentence: "Medicine isn't an exact science.", score: 0, lesson: "4 summer 2 week 3" },
-          { word: "accommodate", sentence: "Does the hotel accommodate pets?", score: 0, lesson: "5 1." },
-          { word: "accompany", sentence: "I suggest you accompany me home.", score: 0, lesson: "5 1." },
-          { word: "according", sentence: "Everything has to go according to your plans, doesn't it?", score: 0, lesson: "5 1." },
-          { word: "achieve", sentence: "How do you hope to achieve that?", score: 0, lesson: "5 1." },
-          { word: "aggressive", sentence: "True to his word, he was aggressive without hurting her.", score: 0, lesson: "5 1." },
-          { word: "amateur", sentence: "It was an amateur mistake.", score: 0, lesson: "5 1." },
-          { word: "ancient", sentence: "The ancient world was a cruel place.", score: 0, lesson: "5 1." },
-          { word: "apparent", sentence: "It was apparent by the look on Jackson's face.", score: 0, lesson: "5 1." },
-          { word: "appreciate", sentence: "I appreciate your help.", score: 0, lesson: "5 1." },
-          { word: "attached", sentence: "attached to life support machines.", score: 0, lesson: "5 1." },
-          { word: "available", sentence: "They were available to each other all the time.", score: 0, lesson: "5 2." },
-          { word: "average", sentence: "The average human.", score: 0, lesson: "5 2." },
-          { word: "awkward", sentence: "You just put me in an awkward position.", score: 0, lesson: "5 2." },
-          { word: "bargain", sentence: "Our bargain is over.", score: 0, lesson: "5 2." },
-          { word: "bruise", sentence: "A very small bruise is called a petechia.", score: 0, lesson: "5 2." },
-          { word: "cemetery", sentence: "in a cemetery somewhere", score: 0, lesson: "5 2." },
-          { word: "committee", sentence: "The committee had arbitrary rules.", score: 0, lesson: "5 2." },
-          { word: "communicate", sentence: "At least she was willing to communicate now.", score: 0, lesson: "5 2." },
-          { word: "competition", sentence: "It's not a competition, he said simply.", score: 0, lesson: "5 2." },
-          { word: "conscience", sentence: "He did the task for the sake of his conscience.", score: 0, lesson: "5 2." },
-          { word: "conscious", sentence: "I wasn't even conscious of what was happening.", score: 0, lesson: "5 3." },
-          { word: "controversy", sentence: "The New Testament reflects a controversy.", score: 0, lesson: "5 3." },
-          { word: "convenience", sentence: "For the convenience of calculation", score: 0, lesson: "5 3." },
-          { word: "correspond", sentence: "Cute pictures appear that correspond to the letter.", score: 0, lesson: "5 3." },
-          { word: "criticise", sentence: "to criticise their actions.", score: 0, lesson: "5 3." },
-          { word: "curiosity", sentence: "It was done for curiosity's sake.", score: 0, lesson: "5 3." },
-          { word: "definite", sentence: "That woman has a definite problem.", score: 0, lesson: "5 3." },
-          { word: "desperate", sentence: "I was desperate to get away from there!", score: 0, lesson: "5 3." },
-          { word: "determined", sentence: "He's determined to keep me.", score: 0, lesson: "5 3." },
-          { word: "develop", sentence: "He would pick now to develop a sense of humor.", score: 0, lesson: "5 3." },
-          { word: "mischievous", sentence: "An idea brought a mischievous smile to her lips.", score: 0, lesson: "5 4." },
-          { word: "muscle", sentence: "Every muscle in her body was sore.", score: 0, lesson: "5 4." },
-          { word: "necessary", sentence: "Maybe it wasn't necessary to say anything.", score: 0, lesson: "5 4." },
-          { word: "neighbour", sentence: "Like its greater neighbour", score: 0, lesson: "5 4." },
-          { word: "nuisance", sentence: "I know it's a nuisance for you to carry it", score: 0, lesson: "5 4." },
-          { word: "occupy", sentence: "He went on his way to occupy Syria", score: 0, lesson: "5 4." },
-          { word: "occur", sentence: "I hope it will not occur to her", score: 0, lesson: "5 4." },
-          { word: "opportunity", sentence: "This was a good opportunity to leave.", score: 0, lesson: "5 4." },
-          { word: "parliament", sentence: "A new parliament was called to meet at Oxford", score: 0, lesson: "5 4." },
-          { word: "persuade", sentence: "How did you persuade Mother to agree to this?", score: 0, lesson: "5 4." },
-          { word: "relevant", sentence: "his stories are still very relevant to us", score: 0, lesson: "5 20th April" },
-          { word: "competition", sentence: "your competition met his maker", score: 0, lesson: "5 20th April" },
-          { word: "ancient", sentence: "The ancient world was a cruel place.", score: 0, lesson: "5 20th April" },
-          { word: "muscular", sentence: "his muscular chest was like a magnet", score: 0, lesson: "5 20th April" },
-          { word: "rhythm", sentence: "She moved in rhythm with the music", score: 0, lesson: "5 20th April" },
-          { word: "twelfth", sentence: "his twelfth birthday", score: 0, lesson: "5 20th April" },
-          { word: "vehicle", sentence: "the vehicle plunged down a steep hill.", score: 0, lesson: "5 20th April" },
-          { word: "disastrous", sentence: "The war proved disastrous for Venice.", score: 0, lesson: "5 20th April" },
-          { word: "colony", sentence: "The British colony sought independence from their country.", score: 0, lesson: "5 3rd May" },
-          { word: "colonisation", sentence: "Human colonization is reaching farther into the galaxy", score: 0, lesson: "5 3rd May" },
-          { word: "democracy", sentence: "We use democracy as a method of selecting representatives.", score: 0, lesson: "5 3rd May" },
-          { word: "colonise", sentence: "He was to explore and colonize", score: 0, lesson: "5 3rd May" },
-          { word: "flourish", sentence: "He signed with a flourish and suddenly turning to his son began to laugh.", score: 0, lesson: "5 3rd May" },
-          { word: "thrive", sentence: "Cattle do not thrive, and even poultry are scarce.", score: 0, lesson: "5 3rd May" },
-          { word: "accommodate", sentence: "Does the hotel accommodate pets?", score: 0, lesson: "5 3rd May" },
-          { word: "accompany", sentence: "I suggest you accompany me home.", score: 0, lesson: "5 3rd May" },
-          { word: "constellations", sentence: "constellations of the zodiac", score: 0, lesson: "9th Jun" },
-          { word: "spherical", sentence: "solution of a spherical triangle", score: 0, lesson: "9th Jun" },
-          { word: "gravity", sentence: "Gravity is what keeps everything from floating around.", score: 0, lesson: "9th Jun" },
-          { word: "perimeter", sentence: "He was touring the perimeter", score: 0, lesson: "9th Jun" },
-          { word: "lightyear", sentence: "Light-year is the distance light travels in one year.", score: 0, lesson: "9th Jun" },
-          { word: "atmosphere", sentence: "atmosphere of nitrogen.", score: 0, lesson: "9th Jun" },
-          { word: "inhabitable", sentence: "Antarctica may be the only inhabitable continent ", score: 0, lesson: "9th Jun" },
-          { word: "buoyancy", sentence: "buoyancy of the water,", score: 0, lesson: "9th Jun" },
-          { word: "deflate", sentence: "deflate like a balloon", score: 0, lesson: "28th Jun" },
-          { word: "deform", sentence: "deform bone structure ", score: 0, lesson: "28th Jun" },
-          { word: "decode", sentence: "how to decode from the start", score: 0, lesson: "28th Jun" },
-          { word: "decompose", sentence: "decompose on boiling with water", score: 0, lesson: "28th Jun" },
-          { word: "defuse", sentence: "balance and defuse conflict", score: 0, lesson: "28th Jun" },
-          { word: "recycle", sentence: "recycle rainwater for the garden", score: 0, lesson: "28th Jun" },
-          { word: "rebuild", sentence: "rebuild the cathedral", score: 0, lesson: "28th Jun" },
-          { word: "rewrite", sentence: "We can rewrite history as much as we like", score: 0, lesson: "28th Jun" },
-          { word: "replace", sentence: "No one will replace me", score: 0, lesson: "28th Jun" },
-          { word: "revisit", sentence: "I shall never revisit those scenes", score: 0, lesson: "28th Jun" },
-        
-        ];
-        // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Autumn1_Week5_Dictation/Year%204%20Autumn%201%20Week%204%20Dictations.pdf
-        // https://sentence.yourdictionary.com/illegal
-        // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Spring1_Week3_LSCWC/Year4Spring1Week3LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Summer1_Week1_LSCWC/Year4Summer1Week1LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week6Day4LSCWC/Year4Summer2Week6Day4LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week5Day4LSCWC/Year4Summer2Week5Day4LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week5Day2LSCWC/Year4Summer2Week5Day2LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week5Day1LSCWC/Year4Summer2Week5Day1LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day2LSCWC/Year4Summer2Week4Day2LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day3LSCWC/Year4Summer2Week4Day3LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day1LSCWC/Year4Summer2Week4Day1LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day2LSCWC/Year4Summer2Week4Day2LSCWC.pdf
-        // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day3LSCWC/Year4Summer2Week4Day3LSCWC.pdf
-        https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Summer2_Week1_LSCWC/Year%204%20Summer%202%20Week%201%20LSWCC.pdf
-        // 
-        // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Summer2_Week2_LSCWC/Year%204%20Summer%202%20Week%202%20LSWCC.pdf
+        {
+          word: "jolly",
+          sentence: "He was a jolly man full of jokes.",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "jolliest",
+          sentence: "She is the jolliest in the class.",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "happier",
+          sentence: "She is happeir than yesterday",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "beautiful",
+          sentence: "Szaffi is soo beautiful",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "everybody",
+          sentence: "Everybody listen",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "speaker",
+          sentence: "This speaker is loud",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "improve",
+          sentence: "You need to improve your spellings",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "should",
+          sentence: "You should dress nicely in a restaurant",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "says",
+          sentence: "He says is a good idea",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "your",
+          sentence: "Is this pen is your one",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "horrible",
+          sentence: "This colour is horrible",
+          score: 0,
+          lesson: "4 I",
+        },
+        {
+          word: "probably",
+          sentence: "You should propably eat chocolate ice cream",
+          score: 0,
+          lesson: "4 I",
+        },
 
-      
-      wordsArray = origWords;
+        {
+          word: "actual",
+          sentence: "Without the actual bones",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "actually",
+          sentence: "Her eyes actually were filled with tears.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "address",
+          sentence: "My email address is in there, too.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "answer",
+          sentence: "He put her answer down in his note book.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "calendar",
+          sentence: "My calendar fills up quickly.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "disappear",
+          sentence: "They will simply disappear from daily use.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "exercise",
+          sentence: "I see you're getting your exercise for the day.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "experience",
+          sentence: "He has a lot of experience in these matters.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "experiment",
+          sentence: "I shut down my experiment at six o'clock.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "extreme",
+          sentence: "The situation called for extreme measures.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "particular",
+          sentence: "The crowd seemed clustered at one particular spot.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "peculiar",
+          sentence:
+            "A peculiar kind of sugar called quercite exists in all acorns.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "though",
+          sentence: "She looked at them as though they had betrayed her.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "although",
+          sentence: "Although she was exhausted, sleep didn't come.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "thought",
+          sentence: "I never thought I could do it.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "separate",
+          sentence: "Absolutely. You are two separate people.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "difficult",
+          sentence: "It must be difficult for Alex to keep you happy.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "disappear",
+          sentence: "They will simply disappear from daily use.",
+          score: 0,
+          lesson: "4 II",
+        },
+        {
+          word: "grown",
+          sentence: "She had grown some great flowers.",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "great",
+          sentence: "She had grown some great flowers.",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "affect",
+          sentence: "The chilly night didn't affect the sheep.",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "effect",
+          sentence: "The effect of the dye in water was obvious.",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "through",
+          sentence: "You could see through the metal grate. ",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "grate",
+          sentence: "You could see through the metal grate. ",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "threw",
+          sentence: "She threw the ball to her friend.",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "fare",
+          sentence: "The fare price made them groan. ",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "groan",
+          sentence: "The fare price made them groan. ",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "fair",
+          sentence: "It was fair that they reflected at break time. ",
+          score: 0,
+          lesson: "4 autumn 1 week 1",
+        },
+        {
+          word: "heal",
+          sentence: "Her heal needs to heel. ",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "heel",
+          sentence: "Her heal needs to heel. ",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "check",
+          sentence: "They needed to check they had the key. ",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "key",
+          sentence: "They needed to check they had the key. ",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "cheque",
+          sentence: "The cheque was presented with the medal. ",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "medal",
+          sentence: "The cheque was presented with the medal. ",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "meddle",
+          sentence: "Please don't meddle with the main door's lock.",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "main",
+          sentence: "Please don't meddle with the main door's lock.",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "mane",
+          sentence: "The horse's mane was glistening.",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "quay",
+          sentence: "They met at the quay to search for the boat. ",
+          score: 0,
+          lesson: "4 autumn 1 week 2",
+        },
+        {
+          word: "science",
+          sentence: "Her science knowledge was fascinating to hear.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "scenery",
+          sentence: "The scene in the play had great scenery.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "discipline",
+          sentence: "His discipline to work to his best was exemplary.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "crescent",
+          sentence: "A crescent was made using scissors and paper.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "scissors",
+          sentence: "A crescent was made using scissors and paper.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "scene",
+          sentence: "The scene in the play had great scenery.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "descent",
+          sentence: "The descent down the hill was tricky.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "ascend",
+          sentence: "The flag would descend and ascend each day.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "descend",
+          sentence: "The flag would descend and ascend each day.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "fascinate",
+          sentence: "The diamond continues to fascinate visitors.",
+          score: 0,
+          lesson: "4 autumn 1 week 3",
+        },
+        {
+          word: "actual",
+          sentence: "The actual time wasn't written on the calendar.",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "calendar",
+          sentence: "The actual time wasn't written on the calendar.",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "thought",
+          sentence: "He thought his address should be kept private.",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "address",
+          sentence: "He thought his address should be kept private.",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "difficult",
+          sentence: "It was difficult to separate the solids.",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "separate",
+          sentence: "It was difficult to separate the solids.",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "disappear",
+          sentence: "The stain wouldn't disappear.",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "experience",
+          sentence: "Everyone had a pleasant experience on the trip.",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "weight",
+          sentence: "The baggage weight was of particular importance. ",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "particular",
+          sentence: "The baggage weight was of particular importance. ",
+          score: 0,
+          lesson: "4 autumn 1 week 4",
+        },
+        {
+          word: "comprehension",
+          sentence: "The comprehension prompted a discussion. ",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "discussion",
+          sentence: "The comprehension prompted a discussion. ",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "extension",
+          sentence: "An extension was built without permission. ",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "permission",
+          sentence: "An extension was built without permission. ",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "diversion",
+          sentence: "The traffic diversion caused a lot of tension. ",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "tension",
+          sentence: "The traffic diversion caused a lot of tension. ",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "suspension",
+          sentence: "The suspension was broken on the bike.",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "occasion",
+          sentence: "It was a happy occasion at the weekend.",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "dimension",
+          sentence: "The dimension of the room is quite large.",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "expansion",
+          sentence: "There was an expansion in the crack.",
+          score: 0,
+          lesson: "4 autumn 1 week 5",
+        },
+        {
+          word: "disappoint",
+          sentence: "They won't disappoint the Queen. ",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "disagree",
+          sentence: "Children can disagree but shouldn't misbehave. ",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "misbehave",
+          sentence: "Children can disagree but shouldn't misbehave. ",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "misspell",
+          sentence: "You might misspell the word disappear.",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "disappear",
+          sentence: "You might misspell the word disappear.",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "disobey",
+          sentence: "If drivers disobey traffic signs it can be dangerous. ",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "disconnect",
+          sentence: "You must disconnect the shower to disinfect it. ",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "disinfect",
+          sentence: "You must disconnect the shower to disinfect it. ",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "misled",
+          sentence: "He was misled about the character's misfortune. ",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "misfortune",
+          sentence: "He was misled about the character's misfortune. ",
+          score: 0,
+          lesson: "4 autumn 2 week 1",
+        },
+        {
+          word: "illegal",
+          sentence: "Does illegal immigration take jobs from citizens?",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "illegible",
+          sentence: "Illegible rebates will often not be processed.",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "illuminate",
+          sentence:
+            "Torch lights illuminate from a different level than the ground lighting.",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "illogical",
+          sentence: "Not being feminist to me is just totally illogical.",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "illiterate",
+          sentence: "He was indeed illiterate; ",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "illicit",
+          sentence:
+            "In the 18th century land grants and illicit trade led to serious disturbances.",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "illumination",
+          sentence: "There is everywhere a certain illumination due to it.",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "illusion",
+          sentence: "This will give the illusion of larger lips.",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "illusive",
+          sentence:
+            "The conscious life of all men is apparitional and illusive.",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "illustration",
+          sentence: "A good illustration of it is peat.",
+          score: 0,
+          lesson: "4 autumn 2 week 2",
+        },
+        {
+          word: "information",
+          sentence: "With information, we will distribute better.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "adoration",
+          sentence:
+            "His love to God as his Father was a passionate adoration which filled his whole heart.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "sensation",
+          sentence: "The sensation was almost physical.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "preparation",
+          sentence:
+            "In this way my preparation for college went on without interruption.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "admiration",
+          sentence: "His gaze swept over her in cold admiration as he spoke.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "foundation",
+          sentence:
+            "Indeed, All Souls was more of a lay foundation than its model.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "qualification",
+          sentence: "The members' qualification is the possession of real.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "experimentation",
+          sentence:
+            "The twenties is still a time of experimentation and discovery.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "exploration",
+          sentence: "Bliss when making his exploration of Jerusalem.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "examination",
+          sentence: "Both passed the examination successfully.",
+          score: 0,
+          lesson: "4 autumn 2 week 3",
+        },
+        {
+          word: "notice",
+          sentence: "Others don't notice it, but I see it.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "ordinary",
+          sentence: "Alex was no ordinary man.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "certain",
+          sentence: "I feel certain of it.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "suppose",
+          sentence: "I suppose they're both a little artificial.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "breathe",
+          sentence: "Rissa forced herself to breathe steadily.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "increase",
+          sentence: "That would increase the value of the house.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "recent",
+          sentence: "This memory was recent and came easily.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "quarter",
+          sentence: "He inhabited a separate quarter of the city.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "group",
+          sentence: "He stopped, watching a group of freight wagons.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "island",
+          sentence: "He swam to an island that was not far away.",
+          score: 0,
+          lesson: "4 autumn 2 week 4",
+        },
+        {
+          word: "forgetting",
+          sentence: "You're forgetting the underground railroad.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "forgotten",
+          sentence: "Yeah, I'd forgotten about that.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "gardening",
+          sentence: "Market gardening is an important industry.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "gardener",
+          sentence: "He called for Taras the gardener, but no one replied.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "limiting",
+          sentence: "This may mean limiting your protein to one meal.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "beginning",
+          sentence: "He was beginning to hate the cold.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "beginner",
+          sentence: "We always assume that everyone is a raw beginner.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "limitation",
+          sentence: "But this limitation is always taken for granted.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "preferred",
+          sentence: "The house was quiet, the way he preferred it.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "limitations",
+          sentence: "It was said he had no limitations.",
+          score: 0,
+          lesson: "4 autumn 2 week 5",
+        },
+        {
+          word: "admiration",
+          sentence: "They stood before it in silent admiration.",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "foundation",
+          sentence: "You lay the foundation of your palaces.",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "forgotten",
+          sentence: "Yeah, I'd forgotten about that.",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "gardening",
+          sentence: "Market gardening is an important industry.",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "great",
+          sentence: "You're doing a great job.",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "grate",
+          sentence: "The fuel is burned on the grate of the inner firebox.",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "main",
+          sentence: "His main sin appears to be his poor timing.",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "mane",
+          sentence: "The tiger has no mane",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "fascinate",
+          sentence: "The sky was sparkly enough to fascinate her.",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "comprehension",
+          sentence: "Comprehension unknotted his brows.",
+          score: 0,
+          lesson: "4 spring 1 week 1",
+        },
+        {
+          word: "league",
+          sentence: "He strongly opposed the League of Nations.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "tongue",
+          sentence: "I was tongue tied, at a loss how to respond.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "antique",
+          sentence: "But in some ways, it's like antique furniture.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "unique",
+          sentence: "It wasn't so unique to be traceable.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "fatigue",
+          sentence: "Perhaps it was fatigue from the long journey.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "intrigue",
+          sentence: "Her life was notorious for intrigue and perfidy.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "rogue",
+          sentence:
+            "He went rogue and helped Katie evade you in the underworld.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "vague",
+          sentence: "He was vague to say the least.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "opaque",
+          sentence: "It can switch from opaque to clear.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "plaque",
+          sentence: "A small, inscribed plaque is placed in front of the rose.",
+          score: 0,
+          lesson: "4 spring 1 week 2",
+        },
+        {
+          word: "expression",
+          sentence: "His expression was unreadable.",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "possession",
+          sentence: "It becomes your only possession.",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "discussion",
+          sentence: "The last will require some discussion with Damian.",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "confession",
+          sentence: "The confession consisted of forty articles.",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "permission",
+          sentence: "Will you get permission for me?",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "admission",
+          sentence: "Admission policies of grad schools",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "impression",
+          sentence: "That's your impression of me?",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "omission",
+          sentence: "This omission is sometimes believed to be an error.",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "emission",
+          sentence: "The figures for greenhouse gas emission faired no better.",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "commission",
+          sentence: "This was the last commission entrusted to him.",
+          score: 0,
+          lesson: "4 spring 1 week 3",
+        },
+        {
+          word: "although",
+          sentence:
+            "Certainly this could happen, although the odds are remote.",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "through",
+          sentence: "He ran a hand through his hair.",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "potatoes",
+          sentence: "The carrots and potatoes packed around it",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "enough",
+          sentence: "She had enough for the entire family.",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "possess",
+          sentence: "What truth would he possess?",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "natural",
+          sentence: "We think he might have some natural ability.",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "believe",
+          sentence: "I can't believe I've finally found you.",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "different",
+          sentence: "He's a different person, entirely.",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "possible",
+          sentence: "I have only three possible answers.",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "probably",
+          sentence: "She was probably right.",
+          score: 0,
+          lesson: "4 spring 1 week 4",
+        },
+        {
+          word: "scheme",
+          sentence: "The new scheme works splendidly.",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "chorus",
+          sentence: "A chorus of voices ",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "chemist",
+          sentence: "Bergman, the leading chemist in Sweden.",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "echo",
+          sentence: "Nothing to echo off of, she supposed.",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "character",
+          sentence: "It was totally out of character for her.",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "ache",
+          sentence: "Cold air made his lungs ache",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "monarch",
+          sentence: "Osman reigned as independent monarch until 1326.",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "stomach",
+          sentence: "Her stomach contracted and then twisted into a knot.",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "orchid",
+          sentence: "orchid flower",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "orchestra",
+          sentence: "The diameter of the orchestra is 762 ft.",
+          score: 0,
+          lesson: "4 spring 1 week 5",
+        },
+        {
+          word: "invention",
+          sentence: "Libra was not of Greek invention.",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "injection",
+          sentence: "adrenaline injection",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "hesitation",
+          sentence: "This time there was no hesitation, no rush.",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "completion",
+          sentence: "the work before its completion.",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "continuation",
+          sentence: "She relaxed and enjoyed the continuation of light banter.",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "opposition",
+          sentence: "He's the opposition, remember?",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "pollution",
+          sentence: "Air pollution comes from many different sources.",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "question",
+          sentence: "It wasn't a question, but a flat statement.",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "affection",
+          sentence: "He really did feel affection for her, if he was jealous.",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "attraction",
+          sentence: "Still, admitting to any attraction seemed folly.",
+          score: 0,
+          lesson: "4 spring 2 week 1",
+        },
+        {
+          word: "poisonous",
+          sentence: "Dulce gave her a poisonous stare.",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "dangerous",
+          sentence: "You're treading on dangerous ground.",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "mountainous",
+          sentence: "Though less mountainous than the other islands",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "famous",
+          sentence: "It is still a famous school.",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "various",
+          sentence:
+            "She said nothing, barely nodding in response to the various greetings.",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "tremendous",
+          sentence: "It will be a tremendous banquet.",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "enormous",
+          sentence:
+            "His income is said by Lucian to have reached an enormous figure.",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "jealous",
+          sentence: "She doesn't have any reason to be jealous of me.",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "continuous",
+          sentence: "All he sees is one continuous line.",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "contentious",
+          sentence: "It has been a contentious issue for decades.",
+          score: 0,
+          lesson: "4 spring 2 week 2",
+        },
+        {
+          word: "courageous",
+          sentence: "I hope I shall be courageous always.",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "outrageous",
+          sentence: "The water bill was going to be outrageous.",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "serious",
+          sentence: "This is serious stuff.",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "obvious",
+          sentence: "But it is obvious to me that we can end war.",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "curious",
+          sentence: "I'm just a curious citizen.",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "hideous",
+          sentence: "Hideous forms floated before him.",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "spontaneous",
+          sentence:
+            "And Nicholas heard her spontaneous, happy, ringing laughter.",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "courteous",
+          sentence: "At best, Alex would be courteous to him.",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "disastrous",
+          sentence: "The war proved disastrous for Venice.",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "glamorous",
+          sentence: "one of the world's most glamorous women",
+          score: 0,
+          lesson: "4 spring 2 week 3",
+        },
+        {
+          word: "complete",
+          sentence: "He has devised a complete explanation.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "opposite",
+          sentence: "They rode up the opposite hill.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "experiment",
+          sentence: "I shut down my experiment at six o'clock.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "naughty",
+          sentence: "You are a very naughty witch.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "grammar",
+          sentence: "The grammar school was founded in 1618.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "knowledge",
+          sentence: "We are becoming a knowledge economy.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "favourite",
+          sentence: "At first his favourite subject was classics.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "caught",
+          sentence: "You just happened to get caught on camera.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "promise",
+          sentence: "I promise not to harm you.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "occasion",
+          sentence: "He was excited to see her dressed up for the occasion.",
+          score: 0,
+          lesson: "4 spring 2 week 4",
+        },
+        {
+          word: "weather",
+          sentence: "I'm surprised to say the weather was better.",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "whether",
+          sentence: "I really don't know whether to finish him or not.",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "whose",
+          sentence: "So whose bones are they?",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "who's",
+          sentence: "who's who of beauty industry bigwigs.",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "accept",
+          sentence: "Give her a little time to accept the idea.",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "except",
+          sentence: "They won't even be together except weekends.",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "reign",
+          sentence: "We can no longer both reign together.",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "rein",
+          sentence: "I gave him free rein to do what he needs to.",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "dear",
+          sentence: "I'll miss my dear brother.",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "deer",
+          sentence: "A deer watched them from the trees.",
+          score: 0,
+          lesson: "4 spring 2 week 5",
+        },
+        {
+          word: "weather",
+          sentence: "I'm surprised to say the weather was better.",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "whether",
+          sentence: "I really don't know whether to finish him or not.",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "serious",
+          sentence: "This is serious stuff.",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "obvious",
+          sentence: "But it is obvious to me that we can end war.",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "completion",
+          sentence: "the work before its completion.",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "dangerous",
+          sentence: "You're treading on dangerous ground.",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "mountainous",
+          sentence: "Though less mountainous than the other islands",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "tongue",
+          sentence: "I was tongue tied, at a loss how to respond.",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "antique",
+          sentence: "But in some ways, it's like antique furniture.",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "expression",
+          sentence: "His expression was unreadable.",
+          score: 0,
+          lesson: "4 summer 1 week 1",
+        },
+        {
+          word: "basic",
+          sentence: "I don't want to deny you such a basic need.",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "basically",
+          sentence: "I basically asked him to stop.",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "frantic",
+          sentence: "But all my frantic efforts were in vain.",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "frantically",
+          sentence: " tried frantically to slip out of my blunder.",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "dramatic",
+          sentence: "He was a powerful and dramatic preacher.",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "dramatically",
+          sentence: "It relieves extra dry skin dramatically.",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "historic",
+          sentence: "The cathedral is of great historic ",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "historically",
+          sentence: "Of their origin nothing is historically known.",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "optimistic",
+          sentence:
+            "Jorge was optimistic and always saw the best in every situation.",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "optimistically",
+          sentence: "He optimistically predicted success.",
+          score: 0,
+          lesson: "4 summer 1 week 2",
+        },
+        {
+          word: "subdivide",
+          sentence: "Elwes we subdivide the whole subregion",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "subheading",
+          sentence: "Use headings and subheadings to break up the text.",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "submarine",
+          sentence: "A submarine cable connects the town with Zanzibar.",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "submerge",
+          sentence: "Submerge the fruit in water and gently pull it apart.",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "antiseptic",
+          sentence:
+            "The antiseptic pine-laced air from the hallway made her nose wrinkle.",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "anticlockwise",
+          sentence:
+            "Almost like the touch screen was rotated slightly anticlockwise ",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "antisocial",
+          sentence:
+            "The car drivers were being particularly antisocial that day.",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "antibiotic",
+          sentence: "They changed the antibiotic again.",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "autobiography",
+          sentence: "His Autobiography was published in 1850.",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "autograph",
+          sentence: "Autograph is written in the author's own handwriting.",
+          score: 0,
+          lesson: "4 summer 1 week 3",
+        },
+        {
+          word: "purpose",
+          sentence: "If you win or lose, let it be on purpose.",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "straight",
+          sentence: "She looked him straight in the eye.",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "surprise",
+          sentence: "He likes to surprise people.",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "therefore",
+          sentence: "He therefore gave him many beautiful gifts",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "pressure",
+          sentence: "Let me put pressure on it.",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "peculiar",
+          sentence: "Their peculiar business is expressed by the term",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "heard",
+          sentence: "I heard you scream.",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "important",
+          sentence: "What's important is that you're alive.",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "interest",
+          sentence: "Somehow it failed to interest me.",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "consider",
+          sentence: "Consider it a fact.",
+          score: 0,
+          lesson: "4 summer 1 week 4",
+        },
+        {
+          word: "interact",
+          sentence: "I don't interact with people much.",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "intercity",
+          sentence: "The newer intercity (IC) trains are modern",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "international",
+          sentence: "Philadelphia International Airport.",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "interrelated",
+          sentence:
+            "A number of interrelated factors help you determine the proper ski length.",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "interchange",
+          sentence:
+            "There is an interchange of the divine and human attributes",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "interconnected",
+          sentence: "All these districts are interconnected.",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "internet",
+          sentence: "I recognized him from his silly Internet chatting.",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "intermediate",
+          sentence: "It is intermediate in its nature between land and sky.",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "intermission",
+          sentence: "I promise a short intermission before I give act two",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "interweave",
+          sentence: "adapt or interweave such passages.",
+          score: 0,
+          lesson: "4 summer 1 week 5",
+        },
+        {
+          word: "children's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "people's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "men's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "mice's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "women's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "geese's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "fishermen's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "oxen's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "teeth's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "police's",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 2",
+        },
+        {
+          word: "girls'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "boys'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "babies'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "houses'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "sisters'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "trolleys'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "potatoes'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "pizzas'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "buses'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "arches'",
+          sentence: "Focus: Possessive apostrophes with plural words",
+          score: 0,
+          lesson: "4 summer 2 week 1",
+        },
+        {
+          word: "address",
+          sentence: "My email address is in there, too.",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "believe",
+          sentence: "I don't believe that.",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "business",
+          sentence: "I mean, I could still have my business in town.",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "complete",
+          sentence: "He has devised a complete explanation.",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "different",
+          sentence: "He's a different person, entirely.",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "eighth",
+          sentence: "From Mohl down to the eighth decade ",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "experience",
+          sentence: "He has a lot of experience in these matters.",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "increase",
+          sentence: "That would increase the value of the house.",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "island",
+          sentence: "He swam to an island that was not far away.",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "medicine",
+          sentence: "Medicine isn't an exact science.",
+          score: 0,
+          lesson: "4 summer 2 week 3",
+        },
+        {
+          word: "accommodate",
+          sentence: "Does the hotel accommodate pets?",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "accompany",
+          sentence: "I suggest you accompany me home.",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "according",
+          sentence: "Everything has to go according to your plans, doesn't it?",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "achieve",
+          sentence: "How do you hope to achieve that?",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "aggressive",
+          sentence: "True to his word, he was aggressive without hurting her.",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "amateur",
+          sentence: "It was an amateur mistake.",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "ancient",
+          sentence: "The ancient world was a cruel place.",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "apparent",
+          sentence: "It was apparent by the look on Jackson's face.",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "appreciate",
+          sentence: "I appreciate your help.",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "attached",
+          sentence: "attached to life support machines.",
+          score: 0,
+          lesson: "5 1.",
+        },
+        {
+          word: "available",
+          sentence: "They were available to each other all the time.",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "average",
+          sentence: "The average human.",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "awkward",
+          sentence: "You just put me in an awkward position.",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "bargain",
+          sentence: "Our bargain is over.",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "bruise",
+          sentence: "A very small bruise is called a petechia.",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "cemetery",
+          sentence: "in a cemetery somewhere",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "committee",
+          sentence: "The committee had arbitrary rules.",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "communicate",
+          sentence: "At least she was willing to communicate now.",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "competition",
+          sentence: "It's not a competition, he said simply.",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "conscience",
+          sentence: "He did the task for the sake of his conscience.",
+          score: 0,
+          lesson: "5 2.",
+        },
+        {
+          word: "conscious",
+          sentence: "I wasn't even conscious of what was happening.",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "controversy",
+          sentence: "The New Testament reflects a controversy.",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "convenience",
+          sentence: "For the convenience of calculation",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "correspond",
+          sentence: "Cute pictures appear that correspond to the letter.",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "criticise",
+          sentence: "to criticise their actions.",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "curiosity",
+          sentence: "It was done for curiosity's sake.",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "definite",
+          sentence: "That woman has a definite problem.",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "desperate",
+          sentence: "I was desperate to get away from there!",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "determined",
+          sentence: "He's determined to keep me.",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "develop",
+          sentence: "He would pick now to develop a sense of humor.",
+          score: 0,
+          lesson: "5 3.",
+        },
+        {
+          word: "mischievous",
+          sentence: "An idea brought a mischievous smile to her lips.",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "muscle",
+          sentence: "Every muscle in her body was sore.",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "necessary",
+          sentence: "Maybe it wasn't necessary to say anything.",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "neighbour",
+          sentence: "Like its greater neighbour",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "nuisance",
+          sentence: "I know it's a nuisance for you to carry it",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "occupy",
+          sentence: "He went on his way to occupy Syria",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "occur",
+          sentence: "I hope it will not occur to her",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "opportunity",
+          sentence: "This was a good opportunity to leave.",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "parliament",
+          sentence: "A new parliament was called to meet at Oxford",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "persuade",
+          sentence: "How did you persuade Mother to agree to this?",
+          score: 0,
+          lesson: "5 4.",
+        },
+        {
+          word: "relevant",
+          sentence: "his stories are still very relevant to us",
+          score: 0,
+          lesson: "5 20th April",
+        },
+        {
+          word: "competition",
+          sentence: "your competition met his maker",
+          score: 0,
+          lesson: "5 20th April",
+        },
+        {
+          word: "ancient",
+          sentence: "The ancient world was a cruel place.",
+          score: 0,
+          lesson: "5 20th April",
+        },
+        {
+          word: "muscular",
+          sentence: "his muscular chest was like a magnet",
+          score: 0,
+          lesson: "5 20th April",
+        },
+        {
+          word: "rhythm",
+          sentence: "She moved in rhythm with the music",
+          score: 0,
+          lesson: "5 20th April",
+        },
+        {
+          word: "twelfth",
+          sentence: "his twelfth birthday",
+          score: 0,
+          lesson: "5 20th April",
+        },
+        {
+          word: "vehicle",
+          sentence: "the vehicle plunged down a steep hill.",
+          score: 0,
+          lesson: "5 20th April",
+        },
+        {
+          word: "disastrous",
+          sentence: "The war proved disastrous for Venice.",
+          score: 0,
+          lesson: "5 20th April",
+        },
+        {
+          word: "colony",
+          sentence:
+            "The British colony sought independence from their country.",
+          score: 0,
+          lesson: "5 3rd May",
+        },
+        {
+          word: "colonisation",
+          sentence: "Human colonization is reaching farther into the galaxy",
+          score: 0,
+          lesson: "5 3rd May",
+        },
+        {
+          word: "democracy",
+          sentence:
+            "We use democracy as a method of selecting representatives.",
+          score: 0,
+          lesson: "5 3rd May",
+        },
+        {
+          word: "colonise",
+          sentence: "He was to explore and colonize",
+          score: 0,
+          lesson: "5 3rd May",
+        },
+        {
+          word: "flourish",
+          sentence:
+            "He signed with a flourish and suddenly turning to his son began to laugh.",
+          score: 0,
+          lesson: "5 3rd May",
+        },
+        {
+          word: "thrive",
+          sentence: "Cattle do not thrive, and even poultry are scarce.",
+          score: 0,
+          lesson: "5 3rd May",
+        },
+        {
+          word: "accommodate",
+          sentence: "Does the hotel accommodate pets?",
+          score: 0,
+          lesson: "5 3rd May",
+        },
+        {
+          word: "accompany",
+          sentence: "I suggest you accompany me home.",
+          score: 0,
+          lesson: "5 3rd May",
+        },
+        {
+          word: "constellations",
+          sentence: "constellations of the zodiac",
+          score: 0,
+          lesson: "9th Jun",
+        },
+        {
+          word: "spherical",
+          sentence: "solution of a spherical triangle",
+          score: 0,
+          lesson: "9th Jun",
+        },
+        {
+          word: "gravity",
+          sentence: "Gravity is what keeps everything from floating around.",
+          score: 0,
+          lesson: "9th Jun",
+        },
+        {
+          word: "perimeter",
+          sentence: "He was touring the perimeter",
+          score: 0,
+          lesson: "9th Jun",
+        },
+        {
+          word: "lightyear",
+          sentence: "Light-year is the distance light travels in one year.",
+          score: 0,
+          lesson: "9th Jun",
+        },
+        {
+          word: "atmosphere",
+          sentence: "atmosphere of nitrogen.",
+          score: 0,
+          lesson: "9th Jun",
+        },
+        {
+          word: "inhabitable",
+          sentence: "Antarctica may be the only inhabitable continent ",
+          score: 0,
+          lesson: "9th Jun",
+        },
+        {
+          word: "buoyancy",
+          sentence: "buoyancy of the water,",
+          score: 0,
+          lesson: "9th Jun",
+        },
+        {
+          word: "deflate",
+          sentence: "deflate like a balloon",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "deform",
+          sentence: "deform bone structure ",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "decode",
+          sentence: "how to decode from the start",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "decompose",
+          sentence: "decompose on boiling with water",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "defuse",
+          sentence: "balance and defuse conflict",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "recycle",
+          sentence: "recycle rainwater for the garden",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "rebuild",
+          sentence: "rebuild the cathedral",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "rewrite",
+          sentence: "We can rewrite history as much as we like",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "replace",
+          sentence: "No one will replace me",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "revisit",
+          sentence: "I shall never revisit those scenes",
+          score: 0,
+          lesson: "28th Jun",
+        },
+        {
+          word: "accomodate",
+          sentence:
+            "And will it accomodate a walker or wheelchair if you need one in future?",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+        {
+          word: "accompany",
+          sentence: "I suggest you accompany me home.",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+        {
+          word: "according",
+          sentence: "Everything has to go according to your plans",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+        {
+          word: "achieve",
+          sentence: "How do you hope to achieve that?",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+        {
+          word: "agressive",
+          sentence: "This is an agressive guy",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+        {
+          word: "amateur",
+          sentence: "It was an amateur mistake.",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+        {
+          word: "ancient",
+          sentence: "The ancient world was a cruel place.",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+        {
+          word: "apparent",
+          sentence: "It was apparent by the look on Jackson's face.",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+        {
+          word: "appreciate",
+          sentence: "I appreciate your help.",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+        {
+          word: "attached",
+          sentence: "She was attached to the arm of good-looking man",
+          score: 0,
+          lesson: "21. Sept 2023",
+        },
+      ];
+      // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Autumn1_Week5_Dictation/Year%204%20Autumn%201%20Week%204%20Dictations.pdf
+      // https://sentence.yourdictionary.com/illegal
+      // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Spring1_Week3_LSCWC/Year4Spring1Week3LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Summer1_Week1_LSCWC/Year4Summer1Week1LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week6Day4LSCWC/Year4Summer2Week6Day4LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week5Day4LSCWC/Year4Summer2Week5Day4LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week5Day2LSCWC/Year4Summer2Week5Day2LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week5Day1LSCWC/Year4Summer2Week5Day1LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day2LSCWC/Year4Summer2Week4Day2LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day3LSCWC/Year4Summer2Week4Day3LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day1LSCWC/Year4Summer2Week4Day1LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day2LSCWC/Year4Summer2Week4Day2LSCWC.pdf
+      // https://static.purplemash.com/mashcontent/applications/guides/Year4Summer2Week4Day3LSCWC/Year4Summer2Week4Day3LSCWC.pdf
+      //static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Summer2_Week1_LSCWC/Year%204%20Summer%202%20Week%201%20LSWCC.pdf
+      //
+      // https://static.purplemash.com/mashcontent/applications/guides/Spelling_Y4_Summer2_Week2_LSCWC/Year%204%20Summer%202%20Week%202%20LSWCC.pdf
+
+      https: wordsArray = origWords;
       var selectedWordIndex = 0;
       var voices = null;
-      var finished=[];
-      var demoMode=false;
+      var finished = [];
+      var demoMode = false;
 
       function loadVoices() {
         voices = speechSynthesis.getVoices();
         voices.forEach(function (voice, i) {
-          if (voice && voice.lang && voice.lang.includes('en') ){
+          if (voice && voice.lang && voice.lang.includes("en")) {
             // Create a new option element.
             var option = document.createElement("option");
 
@@ -659,7 +3661,7 @@
         if (voices === null) {
           loadVoices();
         }
-        if (text){
+        if (text) {
           var speaker = new SpeechSynthesisUtterance();
           speaker.volume = parseFloat(1); //0--1
           speaker.rate = parseFloat(0.8); //0.1--10
@@ -681,28 +3683,35 @@
       function getTextFieldValue() {
         speakWord(document.getElementById("attemptword").value);
       }
-      
+
       function getRandomIndex() {
-        if (wordsArray.length===0){
-          const isExam=document.getElementById("isExam").checked
+        if (wordsArray.length === 0) {
+          const isExam = document.getElementById("isExam").checked;
           document.getElementById("controlpanel0").remove();
           document.getElementById("controlpanel1").remove();
           document.getElementById("controlpanel2").remove();
-          if (isExam){
-            if  (exam.length>0){
-              document.getElementById("lessonLength").innerHTML=` These words was wrong: ${exam.join(", ")}`
+          if (isExam) {
+            if (exam.length > 0) {
+              document.getElementById(
+                "lessonLength"
+              ).innerHTML = ` These words was wrong: ${exam.join(", ")}`;
               speakWord("Don't worry, let's try again later");
             } else {
-              document.getElementById("lessonLength").innerHTML=`Hurray Excellent, good job`
+              document.getElementById(
+                "lessonLength"
+              ).innerHTML = `Hurray Excellent, good job`;
               speakWord("Hurray Excellent, good job");
             }
           } else {
-            speakWord("No word left to learn today. Szaffi you are really good.");
+            speakWord(
+              "No word left to learn today. Szaffi you are really good."
+            );
           }
           return null;
-        } 
+        }
         selectedWordIndex = Math.floor(Math.random() * wordsArray.length);
-        document.getElementById("selectedIndexSpan").innerHTML = selectedWordIndex ;
+        document.getElementById("selectedIndexSpan").innerHTML =
+          selectedWordIndex;
         document.getElementById("attemptword").value = "";
         document.getElementById("attemptword").focus();
         if (demoMode) {
@@ -713,33 +3722,42 @@
         refreshData();
       }
       function refreshData() {
-        const isExam=document.getElementById("isExam").checked
+        const isExam = document.getElementById("isExam").checked;
         if (demoMode) {
           helper.style.display = "block";
         } else {
           helper.style.display = "none";
         }
-        if (wordsArray[selectedWordIndex] && wordsArray[selectedWordIndex].word){
+        if (
+          wordsArray[selectedWordIndex] &&
+          wordsArray[selectedWordIndex].word
+        ) {
           spanword.textContent = wordsArray[selectedWordIndex].word;
           spansentence.textContent = wordsArray[selectedWordIndex].sentence;
-          spanscore.textContent = isExam?1:2-wordsArray[selectedWordIndex].score;
+          spanscore.textContent = isExam
+            ? 1
+            : 2 - wordsArray[selectedWordIndex].score;
         }
-
       }
       function getSentence() {
-        return wordsArray[selectedWordIndex] && wordsArray[selectedWordIndex].sentence;
+        return (
+          wordsArray[selectedWordIndex] &&
+          wordsArray[selectedWordIndex].sentence
+        );
       }
       function getWorld() {
-        return wordsArray[selectedWordIndex] && wordsArray[selectedWordIndex].word;
+        return (
+          wordsArray[selectedWordIndex] && wordsArray[selectedWordIndex].word
+        );
       }
 
       function wrong() {
         wordsArray[selectedWordIndex].score--;
         helper.style.display = "block";
-        const isExam=document.getElementById("isExam").checked;
-        if (isExam){
+        const isExam = document.getElementById("isExam").checked;
+        if (isExam) {
           wordsArray.splice(selectedWordIndex, 1);
-          document.getElementById("lessonLength").innerHTML=wordsArray.length
+          document.getElementById("lessonLength").innerHTML = wordsArray.length;
         }
         speakWord("wrong");
       }
@@ -752,14 +3770,21 @@
           return null;
         }
         checkBtn.disabled = true;
-        const isExam=document.getElementById("isExam").checked
-        if (`${attemptword.trim()}`.toLocaleLowerCase() === `${getWorld()}`.toLocaleLowerCase()) {
-          
+        const isExam = document.getElementById("isExam").checked;
+        if (
+          `${attemptword.trim()}`.toLocaleLowerCase() ===
+          `${getWorld()}`.toLocaleLowerCase()
+        ) {
           wordsArray[selectedWordIndex].score++;
           speakWord("correct");
-          if (isExam?wordsArray[selectedWordIndex].score>0:wordsArray[selectedWordIndex].score>1){
+          if (
+            isExam
+              ? wordsArray[selectedWordIndex].score > 0
+              : wordsArray[selectedWordIndex].score > 1
+          ) {
             wordsArray.splice(selectedWordIndex, 1);
-            document.getElementById("lessonLength").innerHTML=wordsArray.length
+            document.getElementById("lessonLength").innerHTML =
+              wordsArray.length;
             if (!isExam) {
               speakWord("Congratulation, you learnt this word");
             }
@@ -768,11 +3793,10 @@
           next();
         } else {
           if (isExam) {
-            exam.push(getWorld())
+            exam.push(getWorld());
           }
-          wrong(); 
+          wrong();
         }
-
       }
 
       var voiceSelect;
@@ -783,30 +3807,29 @@
 
         myStorage.setItem("voiceSelect", value);
         if (voiceSelect.value) {
-          wordsArray = origWords.filter(i=> i.lesson ===voiceSelect.value );
+          wordsArray = origWords.filter((i) => i.lesson === voiceSelect.value);
         } else {
           wordsArray = origWords;
         }
-        document.getElementById("lessonLength").innerHTML=wordsArray.length
+        document.getElementById("lessonLength").innerHTML = wordsArray.length;
       }
       function onChangeLesson(selectObject) {
         var value = selectObject.value;
         if (lessonSelect.value) {
-          wordsArray = origWords.filter(i=> i.lesson ===lessonSelect.value );
+          wordsArray = origWords.filter((i) => i.lesson === lessonSelect.value);
           myStorage.setItem("lessionSelect", value);
         } else {
           wordsArray = origWords;
         }
-        document.getElementById("lessonLength").innerHTML=wordsArray.length
-        
+        document.getElementById("lessonLength").innerHTML = wordsArray.length;
       }
-      function next(){
+      function next() {
         speechSynthesis.cancel();
         checkBtn.disabled = false;
         document.getElementById("controlpanel1").style.display = "inline";
         getRandomIndex();
-        speakWord(getSentence() ); 
-        speakWord(getWorld() );
+        speakWord(getSentence());
+        speakWord(getWorld());
       }
       function init() {
         var spanword = document.getElementById("spanword");
@@ -819,54 +3842,110 @@
         if (voices === null) {
           loadVoices();
         }
-        const uniqueLessons = new Set(origWords.map(function (item, i) {return item.lesson}));
+        const uniqueLessons = new Set(
+          origWords.map(function (item, i) {
+            return item.lesson;
+          })
+        );
         [...uniqueLessons].map(function (lesson, i) {
-            // Create a new option element.
-            var option = document.createElement("option");
+          // Create a new option element.
+          var option = document.createElement("option");
 
-            // Set the options value and text.
-            option.value = lesson;
-            option.innerHTML = `Lesson: ${lesson}`;
+          // Set the options value and text.
+          option.value = lesson;
+          option.innerHTML = `Lesson: ${lesson}`;
 
-            // Add the option to the voice selector.
-            lessonSelect.appendChild(option);
+          // Add the option to the voice selector.
+          lessonSelect.appendChild(option);
         });
         lessonSelect.value = myStorage.getItem("lessionSelect");
-        onChangeLesson(lessonSelect)
+        onChangeLesson(lessonSelect);
       }
     </script>
   </head>
-  <body style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 23px;" onload="init()">
-    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">Szaffi's Spelling book v0.42</h1>
+  <body
+    style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 23px"
+    onload="init()"
+  >
+    <h1 style="text-align: center; color: rgb(90, 29, 160); font-size: 60px">
+      Szaffi's Spelling book v0.42
+    </h1>
     <!-- <h1 style="text-align: center; width: 100%">Order: <span id="spanindex"></span></h1> -->
     <div id="helper" style="display: none">
-      <h1 style="text-align: center; width: 100%">Word: <span id="spanword"></span></h1>
-      <h1 style="text-align: center; width: 100%">Sentence: <span id="spansentence"></span></h1>
+      <h1 style="text-align: center; width: 100%">
+        Word: <span id="spanword"></span>
+      </h1>
+      <h1 style="text-align: center; width: 100%">
+        Sentence: <span id="spansentence"></span>
+      </h1>
     </div>
-    <select name="voice" id="voice" onchange="onChangeVoice(this)" style="font-size: 23px;">
+    <select
+      name="voice"
+      id="voice"
+      onchange="onChangeVoice(this)"
+      style="font-size: 23px"
+    >
       <option value="">-- select a voice --</option>
     </select>
-    <select name="lesson" id="lesson" onchange="onChangeLesson(this)" style="font-size: 23px;">
-      <option value="">-- select a lesson --</option>
-    </select><input type="checkbox" id="isExam" name="isExam" value="Exam" onchange="init()" style="width:20px;height:20px;">
-    <label for="isExam">Exam</label> 
+    <select
+      name="lesson"
+      id="lesson"
+      onchange="onChangeLesson(this)"
+      style="font-size: 23px"
+    >
+      <option value="">-- select a lesson --</option></select
+    ><input
+      type="checkbox"
+      id="isExam"
+      name="isExam"
+      value="Exam"
+      onchange="init()"
+      style="width: 20px; height: 20px"
+    />
+    <label for="isExam">Exam</label>
     <p>
-      <span id="controlpanel1" style="display:none;">(<span id="spanscore"></span> left to finish the <span id="selectedIndexSpan"></span>. word.)</span>
-    Words left to learn in this lession: <span id="lessonLength"></span></p>
+      <span id="controlpanel1" style="display: none"
+        >(<span id="spanscore"></span> left to finish the
+        <span id="selectedIndexSpan"></span>. word.)</span
+      >
+      Words left to learn in this lession: <span id="lessonLength"></span>
+    </p>
     <p style="text-align: center" id="controlpanel0">
-      <button onClick="next();" style="width: 200px; height: 100px; font-size: 30px">
+      <button
+        onClick="next();"
+        style="width: 200px; height: 100px; font-size: 30px"
+      >
         Next <span style="font-size: 30px; line-height: 15px">➤</span>
       </button>
-      <button onClick="speakWord(getWorld() );" style="width: 200px; height: 100px; font-size: 30px">
+      <button
+        onClick="speakWord(getWorld() );"
+        style="width: 200px; height: 100px; font-size: 30px"
+      >
         Replay <span style="font-size: 60px; line-height: 20px">↻</span>
       </button>
-      <button onClick="speakWord(getSentence() );" style="width: 200px; height: 100px; font-size: 30px">
+      <button
+        onClick="speakWord(getSentence() );"
+        style="width: 200px; height: 100px; font-size: 30px"
+      >
         Sentence <span style="font-size: 60px; line-height: 20px">˽</span>
       </button>
     </p>
     <div style="margin: 30px; text-align: center" id="controlpanel2">
-      <button onClick="checkWord();" style="width: 400px; height: 100px; font-size: 30px" id="checkBtn" disabled>Check the word</button>
-      <input type="text" id="attemptword" name="world" autofocus style="width: 100%; font-size: 60px" />
+      <button
+        onClick="checkWord();"
+        style="width: 400px; height: 100px; font-size: 30px"
+        id="checkBtn"
+        disabled
+      >
+        Check the word
+      </button>
+      <input
+        type="text"
+        id="attemptword"
+        name="world"
+        autofocus
+        style="width: 100%; font-size: 60px"
+      />
     </div>
   </body>
 </html>
